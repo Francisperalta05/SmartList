@@ -1,4 +1,4 @@
-package com.example.lista_super
+package com.smartlist.app
 
 import io.flutter.embedding.android.FlutterActivity
 
