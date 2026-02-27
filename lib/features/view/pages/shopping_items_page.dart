@@ -61,24 +61,24 @@ class ShoppingItemsPage extends StatelessWidget {
                         overflow: TextOverflow.ellipsis,
                       ),
                     ),
-                    const SizedBox(width: 8),
-                    BlocBuilder<ShoppingItemsBloc, ShoppingItemsState>(
-                      builder: (context, state) {
-                        final canClear =
-                            state is ShoppingItemsLoaded &&
-                            state.items.any((e) => e.isDone);
+                    // const SizedBox(width: 8),
+                    // BlocBuilder<ShoppingItemsBloc, ShoppingItemsState>(
+                    //   builder: (context, state) {
+                    //     final canClear =
+                    //         state is ShoppingItemsLoaded &&
+                    //         state.items.any((e) => e.isDone);
 
-                        return IconButton(
-                          tooltip: 'Limpiar comprados',
-                          onPressed: canClear
-                              ? () => context.read<ShoppingItemsBloc>().add(
-                                  ClearDoneItems(listId),
-                                )
-                              : null,
-                          icon: const Icon(Icons.cleaning_services_outlined),
-                        );
-                      },
-                    ),
+                    //     return IconButton(
+                    //       tooltip: 'Limpiar comprados',
+                    //       onPressed: canClear
+                    //           ? () => context.read<ShoppingItemsBloc>().add(
+                    //               ClearDoneItems(listId),
+                    //             )
+                    //           : null,
+                    //       icon: const Icon(Icons.cleaning_services_outlined),
+                    //     );
+                    //   },
+                    // ),
                   ],
                 ),
                 const SizedBox(height: 10),
