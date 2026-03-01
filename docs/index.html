@@ -4,179 +4,765 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>SmartList - Soporte</title>
-    <meta name="description" content="Soporte de SmartList: para qué sirve y cómo contactar." />
+    <title>ListUp — Soporte</title>
+    <meta name="description" content="Soporte de ListUp: guía rápida, contacto, preguntas frecuentes y privacidad." />
+    <meta name="theme-color" content="#0F1115" />
+
     <style>
         :root {
+            /* App palette (matching your Flutter theme) */
             --bg1: #0F1115;
+            /* background */
             --bg2: #1C1F26;
+            /* background depth */
             --card: #1A1D24;
+            /* surface */
             --text: #FFFFFF;
+            /* primary text */
             --muted: #B2BEC3;
+            /* secondary text */
             --border: rgba(255, 255, 255, .08);
-            --grad1: #6C5CE7;
-            --grad2: #00CEC9;
+
+            --p1: #6C5CE7;
+            /* primary */
+            --p2: #00CEC9;
+            /* accent */
+            --danger: #D63031;
+            --warn: #FDCB6E;
+            --ok: #00B894;
+
+            --shadow: 0 18px 60px rgba(0, 0, 0, .45);
+            --radius: 18px;
+            --radius2: 22px;
         }
 
         * {
             box-sizing: border-box
         }
 
+        html,
+        body {
+            height: 100%
+        }
+
         body {
             margin: 0;
-            font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+            font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
             color: var(--text);
-            background: linear-gradient(180deg, var(--bg1), var(--bg2));
-            min-height: 100vh;
+            background:
+                radial-gradient(900px 500px at 10% 10%, rgba(108, 92, 231, .18), transparent 55%),
+                radial-gradient(900px 500px at 90% 20%, rgba(0, 206, 201, .14), transparent 55%),
+                linear-gradient(180deg, var(--bg1), var(--bg2));
+            overflow-x: hidden;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none
         }
 
         .wrap {
-            max-width: 980px;
+            max-width: 1100px;
             margin: 0 auto;
-            padding: 32px 18px 60px;
+            padding: 28px 16px 70px;
         }
 
-        .top {
+        /* Top bar */
+        .topbar {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            gap: 16px;
-            margin-bottom: 18px;
+            gap: 14px;
+            position: sticky;
+            top: 0;
+            padding: 10px 0;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            background: linear-gradient(180deg, rgba(15, 17, 21, .82), rgba(15, 17, 21, .30));
+            border-bottom: 1px solid rgba(255, 255, 255, .05);
+            z-index: 10;
         }
 
         .brand {
             display: flex;
-            gap: 12px;
             align-items: center;
+            gap: 12px;
+            min-width: 0;
         }
 
         .logo {
-            width: 40px;
-            height: 40px;
+            width: 42px;
+            height: 42px;
             border-radius: 14px;
-            background: linear-gradient(135deg, var(--grad1), var(--grad2));
-            box-shadow: 0 10px 30px rgba(108, 92, 231, .25);
+            background: linear-gradient(135deg, var(--p1), var(--p2));
+            box-shadow: 0 14px 35px rgba(108, 92, 231, .22);
+            position: relative;
+            flex: 0 0 auto;
         }
 
-        h1 {
-            font-size: 26px;
+        .logo:after {
+            content: "";
+            position: absolute;
+            inset: 1px;
+            border-radius: 13px;
+            background: rgba(0, 0, 0, .18);
+            border: 1px solid rgba(255, 255, 255, .10);
+        }
+
+        .brandtext {
+            min-width: 0
+        }
+
+        .title {
             margin: 0;
-            letter-spacing: .2px
+            font-size: 18px;
+            font-weight: 900;
+            letter-spacing: .2px;
+            line-height: 1.1;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
 
-        .sub {
+        .subtitle {
+            margin: 4px 0 0;
+            font-size: 12px;
             color: var(--muted);
-            margin: 6px 0 0;
-            font-size: 14px
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
 
-        .nav a {
-            color: var(--text);
-            text-decoration: none;
+        .actions {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex: 0 0 auto;
+        }
+
+        .chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
             padding: 10px 12px;
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            background: rgba(255, 255, 255, .03);
-        }
-
-        .nav a:hover {
-            background: rgba(255, 255, 255, .06)
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 12px;
-            margin-top: 16px;
-        }
-
-        .card {
-            background: rgba(26, 29, 36, .86);
-            border: 1px solid var(--border);
-            border-radius: 18px;
-            padding: 16px;
-        }
-
-        .card h2 {
-            margin: 0 0 10px;
-            font-size: 15px;
-            font-weight: 800;
-        }
-
-        .card p {
-            margin: 0;
-            color: var(--muted);
-            line-height: 1.5;
-            font-size: 14px;
-            white-space: pre-line;
-        }
-
-        .pill {
-            display: inline-block;
-            margin-top: 10px;
-            padding: 8px 12px;
             border-radius: 999px;
             border: 1px solid var(--border);
             background: rgba(255, 255, 255, .03);
-            color: var(--muted);
-            font-size: 12px;
+            font-size: 13px;
+            color: var(--text);
+            transition: transform .12s ease, background .12s ease, border-color .12s ease;
+            user-select: none;
         }
 
+        .chip:hover {
+            transform: translateY(-1px);
+            background: rgba(255, 255, 255, .06);
+            border-color: rgba(255, 255, 255, .12);
+        }
+
+        .chip svg {
+            opacity: .9
+        }
+
+        /* Hero */
+        .hero {
+            margin-top: 18px;
+            display: grid;
+            grid-template-columns: 1.35fr .65fr;
+            gap: 14px;
+            align-items: stretch;
+        }
+
+        @media (max-width: 900px) {
+            .hero {
+                grid-template-columns: 1fr
+            }
+        }
+
+        .heroCard {
+            border-radius: var(--radius2);
+            border: 1px solid rgba(255, 255, 255, .08);
+            background:
+                radial-gradient(1000px 260px at 15% 0%, rgba(108, 92, 231, .26), transparent 60%),
+                radial-gradient(1000px 260px at 85% 10%, rgba(0, 206, 201, .18), transparent 60%),
+                rgba(26, 29, 36, .70);
+            box-shadow: var(--shadow);
+            padding: 18px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .heroCard:before {
+            content: "";
+            position: absolute;
+            inset: -2px;
+            border-radius: calc(var(--radius2) + 2px);
+            background: linear-gradient(135deg, rgba(108, 92, 231, .25), rgba(0, 206, 201, .18));
+            filter: blur(18px);
+            opacity: .55;
+            pointer-events: none;
+        }
+
+        .heroInner {
+            position: relative
+        }
+
+        .kicker {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 10px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, .04);
+            border: 1px solid rgba(255, 255, 255, .08);
+            font-size: 12px;
+            color: var(--muted);
+        }
+
+        .kicker b {
+            color: var(--text);
+            font-weight: 800
+        }
+
+        .heroH1 {
+            margin: 14px 0 8px;
+            font-size: 30px;
+            font-weight: 950;
+            letter-spacing: .2px;
+            line-height: 1.08;
+        }
+
+        .heroP {
+            margin: 0;
+            color: var(--muted);
+            font-size: 14px;
+            line-height: 1.5;
+            max-width: 62ch;
+        }
+
+        .heroBtns {
+            margin-top: 16px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            border-radius: 14px;
+            padding: 12px 14px;
+            font-weight: 800;
+            font-size: 13px;
+            border: 1px solid rgba(255, 255, 255, .10);
+            background: rgba(255, 255, 255, .04);
+            transition: transform .12s ease, background .12s ease, border-color .12s ease, opacity .12s ease;
+            user-select: none;
+        }
+
+        .btn:hover {
+            transform: translateY(-1px);
+            background: rgba(255, 255, 255, .07);
+            border-color: rgba(255, 255, 255, .14);
+        }
+
+        .btnPrimary {
+            border: none;
+            background: linear-gradient(135deg, var(--p1), var(--p2));
+            box-shadow: 0 14px 35px rgba(108, 92, 231, .18);
+        }
+
+        .btnPrimary:hover {
+            opacity: .95
+        }
+
+        .btn svg {
+            opacity: .95
+        }
+
+        /* Quick cards (right column) */
+        .side {
+            display: grid;
+            gap: 12px;
+            align-content: start;
+        }
+
+        .miniCard {
+            border-radius: var(--radius2);
+            border: 1px solid rgba(255, 255, 255, .08);
+            background: rgba(26, 29, 36, .78);
+            box-shadow: var(--shadow);
+            padding: 14px;
+        }
+
+        .miniTitle {
+            margin: 0;
+            font-size: 14px;
+            font-weight: 900;
+        }
+
+        .miniText {
+            margin: 8px 0 0;
+            color: var(--muted);
+            font-size: 13px;
+            line-height: 1.45;
+            white-space: pre-line;
+        }
+
+        .tagRow {
+            margin-top: 10px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tag {
+            padding: 6px 10px;
+            border-radius: 999px;
+            border: 1px solid rgba(255, 255, 255, .10);
+            background: rgba(255, 255, 255, .03);
+            font-size: 12px;
+            color: var(--muted);
+        }
+
+        /* Content grid */
+        .grid {
+            margin-top: 14px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        @media (max-width: 900px) {
+            .grid {
+                grid-template-columns: 1fr
+            }
+        }
+
+        .card {
+            border-radius: var(--radius2);
+            border: 1px solid rgba(255, 255, 255, .08);
+            background: rgba(26, 29, 36, .80);
+            box-shadow: var(--shadow);
+            padding: 16px;
+        }
+
+        .cardHead {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            margin-bottom: 10px;
+        }
+
+        .cardTitle {
+            margin: 0;
+            font-size: 15px;
+            font-weight: 900;
+        }
+
+        .pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 10px;
+            border-radius: 999px;
+            border: 1px solid rgba(255, 255, 255, .10);
+            background: rgba(255, 255, 255, .03);
+            color: var(--muted);
+            font-size: 12px;
+            user-select: none;
+        }
+
+        .cardBody {
+            margin: 0;
+            color: var(--muted);
+            font-size: 14px;
+            line-height: 1.55;
+            white-space: pre-line;
+        }
+
+        /* FAQ */
+        .faq {
+            margin-top: 12px;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 10px;
+        }
+
+        details {
+            border: 1px solid rgba(255, 255, 255, .08);
+            background: rgba(26, 29, 36, .76);
+            border-radius: 16px;
+            padding: 12px 12px;
+            box-shadow: var(--shadow);
+        }
+
+        summary {
+            cursor: pointer;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            font-weight: 900;
+            font-size: 14px;
+        }
+
+        summary::-webkit-details-marker {
+            display: none
+        }
+
+        .chev {
+            width: 22px;
+            height: 22px;
+            flex: 0 0 auto;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, .10);
+            background: rgba(255, 255, 255, .03);
+            display: grid;
+            place-items: center;
+            transition: transform .15s ease;
+            opacity: .9;
+        }
+
+        details[open] .chev {
+            transform: rotate(180deg)
+        }
+
+        .faqP {
+            margin: 10px 0 0;
+            color: var(--muted);
+            font-size: 13.5px;
+            line-height: 1.55;
+            white-space: pre-line;
+        }
+
+        /* Footer */
         footer {
             margin-top: 18px;
             color: var(--muted);
             font-size: 12px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            border-top: 1px solid rgba(255, 255, 255, .06);
+            padding-top: 14px;
+        }
+
+        footer a {
+            color: var(--muted);
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+
+        /* Toast */
+        .toast {
+            position: fixed;
+            left: 50%;
+            bottom: 18px;
+            transform: translateX(-50%);
+            padding: 10px 12px;
+            border-radius: 14px;
+            border: 1px solid rgba(255, 255, 255, .10);
+            background: rgba(26, 29, 36, .92);
+            box-shadow: var(--shadow);
+            color: var(--text);
+            font-size: 13px;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity .18s ease, transform .18s ease;
+            z-index: 999;
+        }
+
+        .toast.show {
+            opacity: 1;
+            transform: translateX(-50%) translateY(-6px);
+        }
+
+        .toast span {
+            color: var(--muted)
         }
     </style>
 </head>
 
 <body>
     <div class="wrap">
-        <div class="top">
+
+        <!-- Top bar -->
+        <div class="topbar">
             <div class="brand">
                 <div class="logo" aria-hidden="true"></div>
-                <div>
-                    <h1>Soporte - SmartList</h1>
-                    <div class="sub">Ayuda, contacto y preguntas frecuentes</div>
+                <div class="brandtext">
+                    <p class="title">ListUp — Soporte</p>
+                    <p class="subtitle">Ayuda rápida, contacto y preguntas frecuentes</p>
                 </div>
             </div>
 
-            <div class="nav">
-                <a href="privacy.html">Política de privacidad</a>
+            <div class="actions">
+                <a class="chip" href="#contacto" title="Ir a contacto">
+                    <!-- mail icon -->
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                        <path d="M4 6h16v12H4V6Z" stroke="currentColor" stroke-width="2" opacity=".85" />
+                        <path d="m4 7 8 6 8-6" stroke="currentColor" stroke-width="2" opacity=".85" />
+                    </svg>
+                    Contacto
+                </a>
+
+                <a class="chip" href="privacy.html" title="Ver política de privacidad">
+                    <!-- lock icon -->
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                        <path d="M7 11V8a5 5 0 0 1 10 0v3" stroke="currentColor" stroke-width="2" opacity=".85" />
+                        <path d="M6 11h12v10H6V11Z" stroke="currentColor" stroke-width="2" opacity=".85" />
+                    </svg>
+                    Privacidad
+                </a>
             </div>
         </div>
 
-        <div class="grid">
+        <!-- Hero -->
+        <section class="hero">
+            <div class="heroCard">
+                <div class="heroInner">
+                    <div class="kicker">
+                        <b>ListUp</b> · Soporte oficial
+                    </div>
+                    <h1 class="heroH1">Compra con claridad.\nOrganiza en segundos.</h1>
+                    <p class="heroP">
+                        Aquí encuentras todo lo que necesitas: guía rápida, solución a problemas comunes,
+                        y canales de contacto. Si algo no funciona como esperas, lo resolvemos.
+                    </p>
+
+                    <div class="heroBtns">
+                        <a class="btn btnPrimary" href="#faq">
+                            <!-- spark icon -->
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                <path d="M12 2l1.2 6.2L19 9.4l-5.8 1.2L12 17l-1.2-6.4L5 9.4l5.8-1.2L12 2Z"
+                                    fill="currentColor" opacity=".95" />
+                            </svg>
+                            Ver preguntas frecuentes
+                        </a>
+
+                        <a class="btn" href="#como-usar">
+                            <!-- list icon -->
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                <path d="M8 6h13M8 12h13M8 18h13" stroke="currentColor" stroke-width="2" opacity=".9" />
+                                <path d="M3 6h1M3 12h1M3 18h1" stroke="currentColor" stroke-width="2" opacity=".9" />
+                            </svg>
+                            Cómo usar ListUp
+                        </a>
+
+                        <a class="btn" href="#contacto">
+                            <!-- help icon -->
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                <path d="M12 18h.01" stroke="currentColor" stroke-width="3" stroke-linecap="round" />
+                                <path d="M9.09 9a3 3 0 1 1 4.83 2.36c-.8.6-1.42 1.05-1.42 2.14V14" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" opacity=".9" />
+                                <path d="M12 22a10 10 0 1 0-10-10 10 10 0 0 0 10 10Z" stroke="currentColor"
+                                    stroke-width="2" opacity=".9" />
+                            </svg>
+                            Reportar un problema
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <aside class="side">
+                <div class="miniCard">
+                    <p class="miniTitle">Estado de datos</p>
+                    <p class="miniText">Tus listas se guardan localmente en tu dispositivo.
+                        No necesitas crear cuenta.</p>
+                    <div class="tagRow">
+                        <span class="tag">Privacidad primero</span>
+                        <span class="tag">Offline</span>
+                        <span class="tag">Rápida</span>
+                    </div>
+                </div>
+
+                <div class="miniCard" id="contacto">
+                    <p class="miniTitle">Contacto</p>
+                    <p class="miniText">Email: <b id="emailText">soporte@tudominio.com</b>
+                        WhatsApp: <b>+1 (809) 000-0000</b></p>
+                    <div class="tagRow">
+                        <button class="chip" style="cursor:pointer" id="copyEmailBtn" type="button"
+                            title="Copiar email">
+                            <!-- copy icon -->
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                <path d="M9 9h10v10H9V9Z" stroke="currentColor" stroke-width="2" opacity=".85" />
+                                <path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1" stroke="currentColor"
+                                    stroke-width="2" opacity=".85" />
+                            </svg>
+                            Copiar email
+                        </button>
+
+                        <a class="chip"
+                            href="mailto:soporte@tudominio.com?subject=Soporte%20ListUp&body=Hola%2C%20necesito%20ayuda%20con%20ListUp.%0A%0A-Dispositivo%3A%20%0A-Versi%C3%B3n%20Android%2FiOS%3A%20%0A-Problema%3A%20"
+                            title="Enviar email">
+                            <!-- send icon -->
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                <path d="M22 2 11 13" stroke="currentColor" stroke-width="2" opacity=".85" />
+                                <path d="M22 2 15 22l-4-9-9-4 20-7Z" stroke="currentColor" stroke-width="2"
+                                    opacity=".85" />
+                            </svg>
+                            Enviar
+                        </a>
+                    </div>
+                </div>
+            </aside>
+        </section>
+
+        <!-- Main content cards -->
+        <section class="grid" id="como-usar">
             <div class="card">
-                <h2>¿Para qué sirve SmartList?</h2>
-                <p>SmartList te ayuda a organizar tus compras en listas.
-                    Crea listas, agrega productos, marca lo comprado y limpia los completados.</p>
+                <div class="cardHead">
+                    <h2 class="cardTitle">Guía rápida (2 minutos)</h2>
+                    <span class="pill">Empieza aquí</span>
+                </div>
+                <p class="cardBody">1) Crea una lista (Casa, Super, Jumbo, etc.).
+                    2) Agrega productos con cantidad opcional.
+                    3) Marca lo comprado ✅ para mantenerte enfocado.
+                    4) Limpia los completados para dejar la lista lista para la próxima compra.</p>
             </div>
 
             <div class="card">
-                <h2>¿Cómo puedo contactar?</h2>
-                <p>Escríbenos y te respondemos lo antes posible:
-
-                    • Email: francisperalta05@gmail.com
-
-                    Incluye: modelo del dispositivo, versión de Android/iOS y una breve descripción del problema.</p>
-                <span class="pill">Tip: si puedes, adjunta una captura de pantalla</span>
+                <div class="cardHead">
+                    <h2 class="cardTitle">Buenas prácticas</h2>
+                    <span class="pill">Más rápido</span>
+                </div>
+                <p class="cardBody">• Usa nombres cortos (ej: “Casa”, “Súper”, “Costco”).
+                    • Agrega cantidades solo cuando importen (ej: 2 leche).
+                    • Mantén “Por comprar” limpio: borra o limpia lo completado al final.</p>
             </div>
 
             <div class="card">
-                <h2>Reportar errores y sugerencias</h2>
-                <p>¿Encontraste un bug o tienes una idea?
-                    Envíanos el detalle y lo evaluamos para futuras versiones.</p>
+                <div class="cardHead">
+                    <h2 class="cardTitle">Solución de problemas</h2>
+                    <span class="pill">Checklist</span>
+                </div>
+                <p class="cardBody">Si algo no se guarda o no se actualiza:
+                    • Cierra la app y ábrela de nuevo.
+                    • Asegúrate de no estar en modo “ahorro extremo” (Android).
+                    • Actualiza a la última versión desde la tienda.
+                    Si el problema continúa, contáctanos y envía una captura.</p>
             </div>
-        </div>
+
+            <div class="card">
+                <div class="cardHead">
+                    <h2 class="cardTitle">Privacidad</h2>
+                    <span class="pill">Sin cuenta</span>
+                </div>
+                <p class="cardBody">ListUp funciona sin registrarte. Tus listas se guardan en tu dispositivo.
+                    No vendemos ni compartimos tu información. Lee la política completa en “Privacidad”.</p>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="faq" id="faq" aria-label="Preguntas frecuentes">
+            <details>
+                <summary>
+                    ¿Necesito crear una cuenta?
+                    <span class="chev" aria-hidden="true">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+                            <path d="m6 9 6 6 6-6" stroke="currentColor" stroke-width="2" opacity=".85" />
+                        </svg>
+                    </span>
+                </summary>
+                <p class="faqP">No. ListUp no requiere cuenta. Tus listas se guardan localmente en tu dispositivo.</p>
+            </details>
+
+            <details>
+                <summary>
+                    ¿Dónde se guardan mis datos?
+                    <span class="chev" aria-hidden="true">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+                            <path d="m6 9 6 6 6-6" stroke="currentColor" stroke-width="2" opacity=".85" />
+                        </svg>
+                    </span>
+                </summary>
+                <p class="faqP">Se guardan en tu teléfono/tablet (base de datos local). No enviamos tus listas a
+                    servidores.</p>
+            </details>
+
+            <details>
+                <summary>
+                    ¿Puedo recuperar mis listas si cambio de teléfono?
+                    <span class="chev" aria-hidden="true">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+                            <path d="m6 9 6 6 6-6" stroke="currentColor" stroke-width="2" opacity=".85" />
+                        </svg>
+                    </span>
+                </summary>
+                <p class="faqP">Depende del respaldo del sistema (iCloud/Google). Si en el futuro agregamos backup
+                    interno, lo indicaremos claramente.</p>
+            </details>
+
+            <details>
+                <summary>
+                    La app no actualiza/veo cambios raros
+                    <span class="chev" aria-hidden="true">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+                            <path d="m6 9 6 6 6-6" stroke="currentColor" stroke-width="2" opacity=".85" />
+                        </svg>
+                    </span>
+                </summary>
+                <p class="faqP">Cierra y abre la app. Si persiste, envíanos:
+                    • Modelo del dispositivo
+                    • Versión Android/iOS
+                    • Pasos para reproducir
+                    • Captura de pantalla (si aplica)</p>
+            </details>
+        </section>
 
         <footer>
-            © <span id="y"></span> SmartList. Todos los derechos reservados.
+            <div>
+                © <span id="year"></span> ListUp · <a href="privacy.html">Política de privacidad</a>
+            </div>
+            <div>
+                Última actualización: <span id="updated">27/02/2026</span>
+            </div>
         </footer>
+
+    </div>
+
+    <div class="toast" id="toast">
+        Copiado: <span id="toastValue"></span>
     </div>
 
     <script>
-        document.getElementById('y').textContent = new Date().getFullYear();
+        // Footer year
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Copy email
+        const email = "francisperalta05@gmail.com";
+        const copyBtn = document.getElementById("copyEmailBtn");
+        const toast = document.getElementById("toast");
+        const toastValue = document.getElementById("toastValue");
+
+        function showToast(text) {
+            toastValue.textContent = text;
+            toast.classList.add("show");
+            setTimeout(() => toast.classList.remove("show"), 1600);
+        }
+
+        copyBtn.addEventListener("click", async () => {
+            try {
+                await navigator.clipboard.writeText(email);
+                showToast(email);
+            } catch (e) {
+                // fallback
+                const ta = document.createElement("textarea");
+                ta.value = email;
+                document.body.appendChild(ta);
+                ta.select();
+                document.execCommand("copy");
+                ta.remove();
+                showToast(email);
+            }
+        });
     </script>
 </body>
 
