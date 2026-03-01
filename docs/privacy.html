@@ -4,178 +4,779 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>SmartList - Política de Privacidad</title>
-    <meta name="description" content="Política de privacidad de SmartList." />
+    <title>ListUp • Política de privacidad</title>
+    <meta name="description" content="Política de privacidad de ListUp." />
+    <meta name="theme-color" content="#0B0F1A" />
     <style>
         :root {
+            --bg0: #0B0F1A;
             --bg1: #0F1115;
             --bg2: #1C1F26;
             --card: #1A1D24;
             --text: #FFFFFF;
             --muted: #B2BEC3;
             --border: rgba(255, 255, 255, .08);
-            --grad1: #6C5CE7;
-            --grad2: #00CEC9;
+            --g1: #6C5CE7;
+            --g2: #00CEC9;
+            --shadow: 0 20px 60px rgba(0, 0, 0, .45);
+            --radius: 18px;
         }
 
         * {
             box-sizing: border-box
         }
 
+        html,
+        body {
+            height: 100%
+        }
+
         body {
             margin: 0;
-            font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
             color: var(--text);
-            background: linear-gradient(180deg, var(--bg1), var(--bg2));
-            min-height: 100vh;
+            font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+            background:
+                radial-gradient(900px 520px at 18% -10%, rgba(108, 92, 231, .28), transparent 55%),
+                radial-gradient(900px 520px at 92% 6%, rgba(0, 206, 201, .18), transparent 55%),
+                linear-gradient(180deg, var(--bg1), var(--bg2));
         }
 
         .wrap {
-            max-width: 980px;
+            max-width: 1100px;
             margin: 0 auto;
-            padding: 32px 18px 60px;
+            padding: 28px 18px 70px;
         }
 
         .top {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            gap: 16px;
+            gap: 14px;
             margin-bottom: 18px;
         }
 
         .brand {
             display: flex;
-            gap: 12px;
             align-items: center;
+            gap: 12px;
+            min-width: 260px;
         }
 
         .logo {
-            width: 40px;
-            height: 40px;
-            border-radius: 14px;
-            background: linear-gradient(135deg, var(--grad1), var(--grad2));
-            box-shadow: 0 10px 30px rgba(108, 92, 231, .25);
+            width: 44px;
+            height: 44px;
+            border-radius: 16px;
+            background: linear-gradient(135deg, var(--g1), var(--g2));
+            box-shadow: 0 14px 40px rgba(108, 92, 231, .22);
+            position: relative;
+            overflow: hidden;
         }
 
-        h1 {
-            font-size: 26px;
+        .logo:after {
+            content: "";
+            position: absolute;
+            inset: -40%;
+            background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, .35), transparent 45%);
+            transform: rotate(20deg);
+            opacity: .8;
+        }
+
+        .title {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            line-height: 1.1;
+        }
+
+        .title h1 {
+            font-size: 22px;
             margin: 0;
-            letter-spacing: .2px
+            letter-spacing: .2px;
         }
 
-        .sub {
+        .title p {
+            margin: 0;
             color: var(--muted);
-            margin: 6px 0 0;
-            font-size: 14px
+            font-size: 13px;
         }
 
-        .nav a {
+        .actions {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 12px;
+            border-radius: 14px;
+            border: 1px solid var(--border);
+            background: rgba(255, 255, 255, .03);
             color: var(--text);
             text-decoration: none;
-            padding: 10px 12px;
-            border: 1px solid var(--border);
-            border-radius: 12px;
+            font-size: 13px;
+            cursor: pointer;
+            transition: transform .08s ease, background .12s ease, border-color .12s ease;
+            user-select: none;
+        }
+
+        .btn:hover {
+            background: rgba(255, 255, 255, .06);
+            border-color: rgba(255, 255, 255, .14);
+        }
+
+        .btn:active {
+            transform: translateY(1px)
+        }
+
+        .btn.primary {
+            border: none;
+            background: linear-gradient(135deg, var(--g1), var(--g2));
+            box-shadow: 0 16px 45px rgba(0, 206, 201, .12);
+        }
+
+        .btn.primary:hover {
+            filter: brightness(1.03)
+        }
+
+        .btn svg {
+            width: 16px;
+            height: 16px;
+            opacity: .95;
+        }
+
+        .hero {
+            margin-top: 10px;
+            border-radius: 24px;
+            border: 1px solid rgba(255, 255, 255, .08);
+            background: linear-gradient(180deg, rgba(255, 255, 255, .04), rgba(255, 255, 255, .02));
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .hero-inner {
+            padding: 18px;
+            display: grid;
+            grid-template-columns: 1.35fr .65fr;
+            gap: 14px;
+            align-items: stretch;
+        }
+
+        .hero-left {
+            padding: 8px 6px
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 12px;
+            color: var(--muted);
+            padding: 8px 12px;
+            border-radius: 999px;
+            border: 1px solid rgba(255, 255, 255, .10);
             background: rgba(255, 255, 255, .03);
         }
 
-        .nav a:hover {
-            background: rgba(255, 255, 255, .06)
+        .hero h2 {
+            margin: 12px 0 6px;
+            font-size: 28px;
+            letter-spacing: .2px;
+        }
+
+        .hero p {
+            margin: 0;
+            color: var(--muted);
+            line-height: 1.55;
+            font-size: 14px;
+            max-width: 68ch;
+        }
+
+        .quick {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 14px;
+        }
+
+        .chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 12px;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, .08);
+            background: rgba(26, 29, 36, .55);
+            color: var(--text);
+            text-decoration: none;
+            font-size: 13px;
+            transition: background .12s ease, border-color .12s ease;
+        }
+
+        .chip:hover {
+            background: rgba(26, 29, 36, .75);
+            border-color: rgba(255, 255, 255, .14);
+        }
+
+        .hero-right {
+            border-radius: 18px;
+            border: 1px solid rgba(255, 255, 255, .08);
+            background: rgba(26, 29, 36, .55);
+            padding: 14px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 10px;
+        }
+
+        .stat {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 10px;
+            padding: 10px;
+            border-radius: 14px;
+            background: rgba(255, 255, 255, .02);
+            border: 1px solid rgba(255, 255, 255, .06);
+        }
+
+        .stat strong {
+            font-size: 13px
+        }
+
+        .stat span {
+            color: var(--muted);
+            font-size: 12px;
+            line-height: 1.4
+        }
+
+        .gradient-line {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(108, 92, 231, .65), rgba(0, 206, 201, .65), transparent);
+            opacity: .75;
+            margin: 6px 0;
+        }
+
+        .content {
+            margin-top: 16px;
+            display: grid;
+            grid-template-columns: 1.15fr .85fr;
+            gap: 14px;
+            align-items: start;
         }
 
         .card {
-            background: rgba(26, 29, 36, .86);
-            border: 1px solid var(--border);
-            border-radius: 18px;
-            padding: 16px;
-            margin-top: 12px;
+            border-radius: var(--radius);
+            border: 1px solid rgba(255, 255, 255, .08);
+            background: rgba(26, 29, 36, .70);
+            box-shadow: 0 16px 50px rgba(0, 0, 0, .25);
+            overflow: hidden;
         }
 
-        .card h2 {
-            margin: 0 0 10px;
+        .card .head {
+            padding: 14px 14px 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+        }
+
+        .card .head h3 {
+            margin: 0;
             font-size: 15px;
             font-weight: 800;
         }
 
-        .card p {
-            margin: 0;
+        .card .body {
+            padding: 0 14px 14px;
             color: var(--muted);
-            line-height: 1.5;
             font-size: 14px;
-            white-space: pre-line;
+            line-height: 1.55;
         }
 
-        .meta {
-            margin-top: 14px;
+        .list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            padding: 0 14px 14px;
+        }
+
+        .item {
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, .06);
+            background: rgba(255, 255, 255, .02);
+            padding: 12px;
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 12px;
+        }
+
+        .item b {
+            display: block;
+            color: var(--text);
+            font-size: 13px;
+            margin-bottom: 4px;
+        }
+
+        .item small {
+            display: block;
             color: var(--muted);
             font-size: 12px;
+            line-height: 1.4;
         }
 
-        ul {
-            margin: 10px 0 0 18px;
+        .pill {
+            white-space: nowrap;
+            font-size: 12px;
+            padding: 7px 10px;
+            border-radius: 999px;
+            border: 1px solid rgba(255, 255, 255, .10);
+            background: rgba(255, 255, 255, .03);
             color: var(--muted);
+        }
+
+        details {
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, .06);
+            background: rgba(255, 255, 255, .02);
+            padding: 12px;
+        }
+
+        details+details {
+            margin-top: 10px
+        }
+
+        summary {
+            cursor: pointer;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            font-weight: 800;
+            font-size: 13px;
+            color: var(--text);
+        }
+
+        summary::-webkit-details-marker {
+            display: none
+        }
+
+        .chev {
+            opacity: .75;
+            transition: transform .12s ease
+        }
+
+        details[open] .chev {
+            transform: rotate(180deg)
+        }
+
+        details p {
+            margin: 10px 0 0;
+            color: var(--muted);
+            font-size: 13px;
             line-height: 1.5;
-            font-size: 14px;
+        }
+
+        .toc {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            padding: 0 14px 14px;
+        }
+
+        .toc a {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            padding: 12px;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, .06);
+            background: rgba(255, 255, 255, .02);
+            color: var(--text);
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 700;
+            transition: background .12s ease, border-color .12s ease;
+        }
+
+        .toc a:hover {
+            background: rgba(255, 255, 255, .04);
+            border-color: rgba(255, 255, 255, .12);
+        }
+
+        .toc a span {
+            color: var(--muted);
+            font-weight: 600;
+            font-size: 12px
+        }
+
+        .footer {
+            margin-top: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            color: var(--muted);
+            font-size: 12px;
+            flex-wrap: wrap;
+        }
+
+        .links {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .links a {
+            color: var(--muted);
+            text-decoration: none;
+            border-bottom: 1px dashed rgba(255, 255, 255, .18);
+        }
+
+        .links a:hover {
+            color: var(--text)
+        }
+
+        code {
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+            font-size: 12px;
+            color: rgba(255, 255, 255, .92);
+            background: rgba(255, 255, 255, .06);
+            padding: 2px 6px;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, .06);
+        }
+
+        @media (max-width: 920px) {
+            .hero-inner {
+                grid-template-columns: 1fr
+            }
+
+            .content {
+                grid-template-columns: 1fr
+            }
+
+            .actions {
+                justify-content: flex-start
+            }
         }
     </style>
 </head>
 
 <body>
     <div class="wrap">
+        <!-- Top -->
         <div class="top">
             <div class="brand">
                 <div class="logo" aria-hidden="true"></div>
-                <div>
-                    <h1>Política de privacidad</h1>
-                    <div class="sub">SmartList</div>
+                <div class="title">
+                    <h1>ListUp • Privacidad</h1>
+                    <p>Política de privacidad y uso de datos</p>
                 </div>
             </div>
 
-            <div class="nav">
-                <a href="index.html">Soporte</a>
+            <div class="actions">
+                <a class="btn" href="index.html" title="Ir a soporte">
+                    <svg viewBox="0 0 24 24" fill="none">
+                        <path d="M22 12c0 5.523-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2s10 4.477 10 10z"
+                            stroke="currentColor" stroke-width="2" />
+                        <path d="M8 12h8" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                        <path d="M8 8h6" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                        <path d="M8 16h5" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                    </svg>
+                    Soporte
+                </a>
+                <a class="btn primary" href="#contacto" title="Contacto">
+                    <svg viewBox="0 0 24 24" fill="none">
+                        <path d="M4 6h16v12H4V6z" stroke="currentColor" stroke-width="2" opacity=".45" />
+                        <path d="M4 7l8 6 8-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                    Contacto
+                </a>
             </div>
         </div>
 
-        <div class="card">
-            <h2>1. Información que recopilamos</h2>
-            <p>SmartList no requiere crear cuenta.
-                La información de tus listas se guarda localmente en tu dispositivo (SQLite).</p>
+        <!-- Hero -->
+        <section class="hero">
+            <div class="hero-inner">
+                <div class="hero-left">
+                    <span class="badge">
+                        <span
+                            style="width:8px;height:8px;border-radius:999px;background:linear-gradient(135deg,var(--g1),var(--g2));display:inline-block"></span>
+                        Privacidad primero • Sin cuentas • Datos locales
+                    </span>
+
+                    <h2>Tu información es tuya.</h2>
+                    <p>
+                        ListUp está diseñada para funcionar sin crear cuenta. Tus listas se guardan en tu dispositivo.
+                        Esta política explica qué datos se usan y cómo protegemos tu privacidad.
+                    </p>
+
+                    <div class="quick">
+                        <a class="chip" href="#resumen">Resumen</a>
+                        <a class="chip" href="#politica">Política</a>
+                        <a class="chip" href="#contacto">Contacto</a>
+                    </div>
+                </div>
+
+                <aside class="hero-right">
+                    <div class="stat">
+                        <div>
+                            <strong>Almacenamiento local</strong>
+                            <span>Las listas se guardan en SQLite dentro del dispositivo.</span>
+                        </div>
+                        <span class="pill">Local</span>
+                    </div>
+
+                    <div class="stat">
+                        <div>
+                            <strong>Sin cuenta</strong>
+                            <span>No pedimos registro, usuario ni contraseña.</span>
+                        </div>
+                        <span class="pill">No login</span>
+                    </div>
+
+                    <div class="gradient-line"></div>
+
+                    <div class="stat">
+                        <div>
+                            <strong>Sin venta de datos</strong>
+                            <span>No vendemos ni compartimos datos personales.</span>
+                        </div>
+                        <span class="pill">Seguro</span>
+                    </div>
+                </aside>
+            </div>
+        </section>
+
+        <!-- Content -->
+        <div class="content">
+            <main>
+                <!-- Summary -->
+                <section class="card" id="resumen">
+                    <div class="head">
+                        <h3>Resumen rápido</h3>
+                        <span class="pill">TL;DR</span>
+                    </div>
+                    <div class="list">
+                        <div class="item">
+                            <div>
+                                <b>Datos almacenados</b>
+                                <small>Nombre de listas y productos (y cantidad opcional), guardado localmente en tu
+                                    dispositivo.</small>
+                            </div>
+                            <span class="pill">SQLite</span>
+                        </div>
+                        <div class="item">
+                            <div>
+                                <b>Datos compartidos</b>
+                                <small>No compartimos tus listas con terceros ni las subimos a servidores.</small>
+                            </div>
+                            <span class="pill">0 terceros</span>
+                        </div>
+                        <div class="item">
+                            <div>
+                                <b>Cuenta</b>
+                                <small>No necesitas registrarte. La app funciona sin login.</small>
+                            </div>
+                            <span class="pill">Sin cuenta</span>
+                        </div>
+                        <div class="item">
+                            <div>
+                                <b>Contacto</b>
+                                <small>Si tienes dudas, puedes escribirnos a
+                                    <code>francisperalta05@gmail.com</code>.</small>
+                            </div>
+                            <span class="pill">Email</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Policy -->
+                <section class="card" id="politica" style="margin-top:14px;">
+                    <div class="head">
+                        <h3>Política de privacidad</h3>
+                        <span class="pill">Secciones</span>
+                    </div>
+                    <div class="body">
+                        <details open id="s1">
+                            <summary>1. Información que recopilamos <span class="chev">▾</span></summary>
+                            <p>
+                                ListUp no solicita información personal como nombre, teléfono o dirección.
+                                La app guarda localmente información que tú introduces: nombres de listas, productos y
+                                su estado (comprado o no).
+                            </p>
+                        </details>
+
+                        <details id="s2">
+                            <summary>2. Cómo usamos la información <span class="chev">▾</span></summary>
+                            <p>
+                                Usamos la información únicamente para permitirte usar la app: crear listas, guardar
+                                productos y gestionar compras.
+                                No usamos tus datos para publicidad personalizada.
+                            </p>
+                        </details>
+
+                        <details id="s3">
+                            <summary>3. Almacenamiento y sincronización <span class="chev">▾</span></summary>
+                            <p>
+                                Tus datos se almacenan en el dispositivo usando una base de datos local (SQLite).
+                                Por defecto, ListUp no sincroniza datos con servidores.
+                                Si en el futuro se agrega sincronización o backup, se informará claramente y se
+                                actualizará esta política.
+                            </p>
+                        </details>
+
+                        <details id="s4">
+                            <summary>4. Compartición con terceros <span class="chev">▾</span></summary>
+                            <p>
+                                No vendemos ni compartimos tus datos con terceros.
+                                No transferimos tus listas a servicios externos.
+                            </p>
+                        </details>
+
+                        <details id="s5">
+                            <summary>5. Permisos <span class="chev">▾</span></summary>
+                            <p>
+                                Actualmente ListUp no requiere permisos sensibles para funcionar.
+                                Si en el futuro se requieren permisos (por ejemplo, notificaciones o almacenamiento para
+                                exportación),
+                                se solicitarán con transparencia y podrás decidir.
+                            </p>
+                        </details>
+
+                        <details id="s6">
+                            <summary>6. Seguridad <span class="chev">▾</span></summary>
+                            <p>
+                                Tus datos permanecen en tu dispositivo. Recomendamos usar bloqueo de pantalla
+                                (PIN/biometría).
+                                Ningún método es 100% infalible, pero tomamos buenas prácticas para reducir riesgos.
+                            </p>
+                        </details>
+
+                        <details id="s7">
+                            <summary>7. Privacidad de menores <span class="chev">▾</span></summary>
+                            <p>
+                                ListUp no está dirigida específicamente a menores y no recopila datos personales de
+                                menores.
+                                Si crees que un menor nos ha enviado información, contáctanos para revisarlo.
+                            </p>
+                        </details>
+
+                        <details id="s8">
+                            <summary>8. Cambios a esta política <span class="chev">▾</span></summary>
+                            <p>
+                                Podemos actualizar esta política cuando sea necesario.
+                                Publicaremos cambios en esta misma página y actualizaremos la fecha de “Última
+                                actualización”.
+                            </p>
+                        </details>
+                    </div>
+                    <div class="body" style="padding-top:0;">
+                        <div class="gradient-line" style="margin: 8px 0 12px;"></div>
+                        <div style="color:var(--muted);font-size:12px;">
+                            Última actualización: <span id="updated"></span>
+                        </div>
+                    </div>
+                </section>
+            </main>
+
+            <aside>
+                <!-- Table of contents -->
+                <section class="card">
+                    <div class="head">
+                        <h3>Contenido</h3>
+                        <span class="pill">Índice</span>
+                    </div>
+                    <div class="toc">
+                        <a href="#s1">1. Información que recopilamos <span>Ver</span></a>
+                        <a href="#s2">2. Cómo usamos la información <span>Ver</span></a>
+                        <a href="#s3">3. Almacenamiento y sincronización <span>Ver</span></a>
+                        <a href="#s4">4. Compartición con terceros <span>Ver</span></a>
+                        <a href="#s5">5. Permisos <span>Ver</span></a>
+                        <a href="#s6">6. Seguridad <span>Ver</span></a>
+                        <a href="#s7">7. Privacidad de menores <span>Ver</span></a>
+                        <a href="#s8">8. Cambios a esta política <span>Ver</span></a>
+                    </div>
+                </section>
+
+                <!-- Contact -->
+                <section class="card" id="contacto" style="margin-top:14px;">
+                    <div class="head">
+                        <h3>Contacto</h3>
+                        <span class="pill">Email</span>
+                    </div>
+                    <div class="list" style="padding-top:0;">
+                        <div class="item">
+                            <div>
+                                <b>Correo</b>
+                                <small>francisperalta05@gmail.com</small>
+                            </div>
+                            <a class="btn primary" href="index.html" style="padding:8px 10px;">Ir a soporte</a>
+                        </div>
+                        <div class="item">
+                            <div>
+                                <b>Preguntas o solicitudes</b>
+                                <small>Si tienes dudas sobre privacidad o quieres reportar algo, contáctanos desde la
+                                    página de soporte.</small>
+                            </div>
+                            <span class="pill">Soporte</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Transparency -->
+                <section class="card" style="margin-top:14px;">
+                    <div class="head">
+                        <h3>Transparencia</h3>
+                        <span class="pill">Claro</span>
+                    </div>
+                    <div class="list">
+                        <div class="item">
+                            <div>
+                                <b>No vendemos datos</b>
+                                <small>ListUp no vende ni renta información de usuarios.</small>
+                            </div>
+                            <span class="pill">0</span>
+                        </div>
+                        <div class="item">
+                            <div>
+                                <b>Sin anuncios</b>
+                                <small>La app no usa publicidad basada en comportamiento.</small>
+                            </div>
+                            <span class="pill">Ads</span>
+                        </div>
+                    </div>
+                </section>
+            </aside>
         </div>
 
-        <div class="card">
-            <h2>2. Uso de la información</h2>
-            <p>Usamos la información únicamente para que la app funcione (crear listas, guardar productos, marcar
-                comprados).</p>
-        </div>
-
-        <div class="card">
-            <h2>3. Compartición con terceros</h2>
-            <p>No vendemos ni compartimos tus datos con terceros.
-                La app funciona sin necesidad de enviar datos a servidores.</p>
-        </div>
-
-        <div class="card">
-            <h2>4. Permisos</h2>
-            <p>Actualmente la app no requiere permisos sensibles.
-                Si en el futuro agregamos notificaciones o backups, se indicará claramente.</p>
-        </div>
-
-        <div class="card">
-            <h2>5. Seguridad</h2>
-            <p>Tus datos se almacenan localmente.
-                Recomendamos proteger tu dispositivo con PIN/biometría.</p>
-        </div>
-
-        <div class="card">
-            <h2>6. Contacto</h2>
-            <p>Si tienes dudas sobre esta política, contáctanos:
-                francisperalta05@gmail.com</p>
-        </div>
-
-        <div class="meta">
-            Última actualización: 27/02/2026
+        <!-- Footer -->
+        <div class="footer">
+            <div>© <span id="y"></span> ListUp</div>
+            <div class="links">
+                <a href="index.html">Soporte</a>
+                <a href="#politica">Política</a>
+            </div>
         </div>
     </div>
+
+    <script>
+        document.getElementById('y').textContent = new Date().getFullYear();
+
+        // Set a nice readable "last updated" date. Change it when you update the policy.
+        const LAST_UPDATED = new Date(); // today
+        const fmt = new Intl.DateTimeFormat('es-DO', { day: '2-digit', month: '2-digit', year: 'numeric' });
+        document.getElementById('updated').textContent = fmt.format(LAST_UPDATED);
+    </script>
 </body>
 
 </html>
