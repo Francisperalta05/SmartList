@@ -9,27 +9,15 @@
     <meta name="theme-color" content="#0B0F1A" />
     <style>
         :root {
-            /* App-like dark palette */
             --bg0: #0B0F1A;
-            /* deep almost-black */
             --bg1: #0F1115;
-            /* app background */
             --bg2: #1C1F26;
-            /* app gradient bottom */
             --card: #1A1D24;
-            /* app card */
             --text: #FFFFFF;
             --muted: #B2BEC3;
             --border: rgba(255, 255, 255, .08);
-
-            /* Brand gradients (match your app look) */
             --g1: #6C5CE7;
-            /* purple */
             --g2: #00CEC9;
-            /* teal */
-            --g3: #FF4ECD;
-            /* optional accent for highlights */
-
             --shadow: 0 20px 60px rgba(0, 0, 0, .45);
             --radius: 18px;
         }
@@ -53,27 +41,25 @@
                 linear-gradient(180deg, var(--bg1), var(--bg2));
         }
 
-        /* Layout */
         .wrap {
             max-width: 1100px;
             margin: 0 auto;
-            padding: 28px 18px 70px;
+            padding: 28px 18px 70px
         }
 
-        /* Top bar */
         .top {
             display: flex;
             align-items: center;
             justify-content: space-between;
             gap: 14px;
-            margin-bottom: 18px;
+            margin-bottom: 18px
         }
 
         .brand {
             display: flex;
             align-items: center;
             gap: 12px;
-            min-width: 260px;
+            min-width: 260px
         }
 
         .logo {
@@ -99,26 +85,26 @@
             display: flex;
             flex-direction: column;
             gap: 4px;
-            line-height: 1.1;
+            line-height: 1.1
         }
 
         .title h1 {
             font-size: 22px;
             margin: 0;
-            letter-spacing: .2px;
+            letter-spacing: .2px
         }
 
         .title p {
             margin: 0;
             color: var(--muted);
-            font-size: 13px;
+            font-size: 13px
         }
 
         .actions {
             display: flex;
             gap: 10px;
             flex-wrap: wrap;
-            justify-content: flex-end;
+            justify-content: flex-end
         }
 
         .btn {
@@ -139,11 +125,11 @@
 
         .btn:hover {
             background: rgba(255, 255, 255, .06);
-            border-color: rgba(255, 255, 255, .14);
+            border-color: rgba(255, 255, 255, .14)
         }
 
         .btn:active {
-            transform: translateY(1px);
+            transform: translateY(1px)
         }
 
         .btn.primary {
@@ -153,29 +139,27 @@
         }
 
         .btn.primary:hover {
-            filter: brightness(1.03);
+            filter: brightness(1.03)
         }
 
         .btn svg {
             width: 16px;
             height: 16px;
-            opacity: .95;
+            opacity: .95
         }
 
-        /* Hero */
         .hero {
             margin-top: 10px;
             border-radius: 24px;
             border: 1px solid rgba(255, 255, 255, .08);
-            background:
-                linear-gradient(180deg, rgba(255, 255, 255, .04), rgba(255, 255, 255, .02));
+            background: linear-gradient(180deg, rgba(255, 255, 255, .04), rgba(255, 255, 255, .02));
             box-shadow: var(--shadow);
             overflow: hidden;
             position: relative;
         }
 
         .hero-inner {
-            padding: 18px 18px 18px;
+            padding: 18px;
             display: grid;
             grid-template-columns: 1.35fr .65fr;
             gap: 14px;
@@ -183,7 +167,7 @@
         }
 
         .hero-left {
-            padding: 8px 6px;
+            padding: 8px 6px
         }
 
         .badge {
@@ -201,7 +185,7 @@
         .hero h2 {
             margin: 12px 0 6px;
             font-size: 28px;
-            letter-spacing: .2px;
+            letter-spacing: .2px
         }
 
         .hero p {
@@ -209,14 +193,14 @@
             color: var(--muted);
             line-height: 1.55;
             font-size: 14px;
-            max-width: 68ch;
+            max-width: 68ch
         }
 
         .quick {
             display: flex;
             flex-wrap: wrap;
             gap: 10px;
-            margin-top: 14px;
+            margin-top: 14px
         }
 
         .chip {
@@ -235,7 +219,7 @@
 
         .chip:hover {
             background: rgba(26, 29, 36, .75);
-            border-color: rgba(255, 255, 255, .14);
+            border-color: rgba(255, 255, 255, .14)
         }
 
         .hero-right {
@@ -254,20 +238,20 @@
             align-items: flex-start;
             justify-content: space-between;
             gap: 10px;
-            padding: 10px 10px;
+            padding: 10px;
             border-radius: 14px;
             background: rgba(255, 255, 255, .02);
             border: 1px solid rgba(255, 255, 255, .06);
         }
 
         .stat strong {
-            font-size: 13px;
+            font-size: 13px
         }
 
         .stat span {
             color: var(--muted);
             font-size: 12px;
-            line-height: 1.4;
+            line-height: 1.4
         }
 
         .gradient-line {
@@ -277,13 +261,12 @@
             margin: 6px 0;
         }
 
-        /* Content grid */
         .content {
             margin-top: 16px;
             display: grid;
             grid-template-columns: 1.15fr .85fr;
             gap: 14px;
-            align-items: start;
+            align-items: start
         }
 
         .card {
@@ -299,27 +282,27 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            gap: 12px;
+            gap: 12px
         }
 
         .card .head h3 {
             margin: 0;
             font-size: 15px;
-            font-weight: 800;
+            font-weight: 800
         }
 
         .card .body {
             padding: 0 14px 14px;
             color: var(--muted);
             font-size: 14px;
-            line-height: 1.55;
+            line-height: 1.55
         }
 
         .list {
             display: flex;
             flex-direction: column;
             gap: 10px;
-            padding: 0 14px 14px;
+            padding: 0 14px 14px
         }
 
         .item {
@@ -337,14 +320,14 @@
             display: block;
             color: var(--text);
             font-size: 13px;
-            margin-bottom: 4px;
+            margin-bottom: 4px
         }
 
         .item small {
             display: block;
             color: var(--muted);
             font-size: 12px;
-            line-height: 1.4;
+            line-height: 1.4
         }
 
         .pill {
@@ -357,7 +340,6 @@
             color: var(--muted);
         }
 
-        /* FAQ accordion */
         details {
             border-radius: 16px;
             border: 1px solid rgba(255, 255, 255, .06);
@@ -366,7 +348,7 @@
         }
 
         details+details {
-            margin-top: 10px;
+            margin-top: 10px
         }
 
         summary {
@@ -382,37 +364,36 @@
         }
 
         summary::-webkit-details-marker {
-            display: none;
+            display: none
         }
 
         .chev {
             opacity: .75;
-            transition: transform .12s ease;
+            transition: transform .12s ease
         }
 
         details[open] .chev {
-            transform: rotate(180deg);
+            transform: rotate(180deg)
         }
 
         details p {
             margin: 10px 0 0;
             color: var(--muted);
             font-size: 13px;
-            line-height: 1.5;
+            line-height: 1.5
         }
 
-        /* Forms */
         .form {
             display: flex;
             flex-direction: column;
             gap: 10px;
-            padding: 0 14px 14px;
+            padding: 0 14px 14px
         }
 
         label {
             font-size: 12px;
             color: var(--muted);
-            margin-top: 2px;
+            margin-top: 2px
         }
 
         input,
@@ -423,14 +404,14 @@
             color: var(--text);
             border: 1px solid rgba(255, 255, 255, .08);
             border-radius: 14px;
-            padding: 12px 12px;
+            padding: 12px;
             font-size: 14px;
             outline: none;
         }
 
         textarea {
             min-height: 110px;
-            resize: vertical;
+            resize: vertical
         }
 
         input:focus,
@@ -443,13 +424,13 @@
         .row {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 10px;
+            gap: 10px
         }
 
         .helper {
             font-size: 12px;
             color: var(--muted);
-            line-height: 1.45;
+            line-height: 1.45
         }
 
         .footer {
@@ -466,35 +447,34 @@
         .links {
             display: flex;
             gap: 10px;
-            flex-wrap: wrap;
+            flex-wrap: wrap
         }
 
         .links a {
             color: var(--muted);
             text-decoration: none;
-            border-bottom: 1px dashed rgba(255, 255, 255, .18);
+            border-bottom: 1px dashed rgba(255, 255, 255, .18)
         }
 
         .links a:hover {
-            color: var(--text);
+            color: var(--text)
         }
 
-        /* Responsive */
         @media (max-width: 920px) {
             .hero-inner {
-                grid-template-columns: 1fr;
+                grid-template-columns: 1fr
             }
 
             .content {
-                grid-template-columns: 1fr;
+                grid-template-columns: 1fr
             }
 
             .row {
-                grid-template-columns: 1fr;
+                grid-template-columns: 1fr
             }
 
             .actions {
-                justify-content: flex-start;
+                justify-content: flex-start
             }
         }
     </style>
@@ -502,7 +482,6 @@
 
 <body>
     <div class="wrap">
-        <!-- Top -->
         <div class="top">
             <div class="brand">
                 <div class="logo" aria-hidden="true"></div>
@@ -534,7 +513,6 @@
             </div>
         </div>
 
-        <!-- Hero -->
         <section class="hero">
             <div class="hero-inner">
                 <div class="hero-left">
@@ -578,20 +556,17 @@
 
                     <div class="stat">
                         <div>
-                            <strong>¿Tienes un problema?</strong>
-                            <span>Envíanos detalles y lo resolvemos.</span>
+                            <strong>¿Necesitas ayuda?</strong>
+                            <span>Envíanos detalles y lo revisamos.</span>
                         </div>
-                        <span class="pill">24/7</span>
+                        <span class="pill">Soporte</span>
                     </div>
                 </aside>
             </div>
         </section>
 
-        <!-- Main content -->
         <div class="content">
-            <!-- Left column -->
             <main>
-                <!-- Quick Guide -->
                 <section class="card" id="guia">
                     <div class="head">
                         <h3>Guía rápida</h3>
@@ -630,7 +605,6 @@
                     </div>
                 </section>
 
-                <!-- FAQ -->
                 <section class="card" id="faq" style="margin-top:14px;">
                     <div class="head">
                         <h3>Preguntas frecuentes</h3>
@@ -638,45 +612,30 @@
                     </div>
                     <div class="body">
                         <details>
-                            <summary>
-                                ¿ListUp guarda mis datos en internet?
-                                <span class="chev">▾</span>
-                            </summary>
+                            <summary>¿ListUp guarda mis datos en internet? <span class="chev">▾</span></summary>
                             <p>No. Tus listas se guardan en tu dispositivo. La app no requiere cuenta y no envía tus
                                 listas a servidores.</p>
                         </details>
 
                         <details>
-                            <summary>
-                                ¿Cómo hago backup de mis listas?
-                                <span class="chev">▾</span>
-                            </summary>
-                            <p>En esta versión, el almacenamiento es local. Si necesitas backup, escríbenos: es una de
-                                las funciones más pedidas.</p>
+                            <summary>¿Cómo hago backup de mis listas? <span class="chev">▾</span></summary>
+                            <p>En esta versión, el almacenamiento es local. Si necesitas backup, escríbenos: es una
+                                función planeada.</p>
                         </details>
 
                         <details>
-                            <summary>
-                                La app no actualiza o no veo mis cambios
-                                <span class="chev">▾</span>
-                            </summary>
+                            <summary>La app no actualiza o no veo mis cambios <span class="chev">▾</span></summary>
                             <p>Reinicia la app y revisa si tienes la versión más reciente. Si persiste, envíanos el
                                 modelo del teléfono y la versión del sistema.</p>
                         </details>
 
                         <details>
-                            <summary>
-                                ¿Puedo tener varias listas?
-                                <span class="chev">▾</span>
-                            </summary>
+                            <summary>¿Puedo tener varias listas? <span class="chev">▾</span></summary>
                             <p>Sí. Puedes crear múltiples listas (Casa, Súper, Cumple...).</p>
                         </details>
 
                         <details>
-                            <summary>
-                                ¿Qué permisos usa ListUp?
-                                <span class="chev">▾</span>
-                            </summary>
+                            <summary>¿Qué permisos usa ListUp? <span class="chev">▾</span></summary>
                             <p>ListUp no requiere permisos sensibles para funcionar. Si en el futuro agregamos
                                 notificaciones o backups, se informará claramente.</p>
                         </details>
@@ -684,19 +643,11 @@
                 </section>
             </main>
 
-            <!-- Right column -->
             <aside>
-                <!-- Contact Card -->
                 <section class="card" id="contacto">
                     <div class="head">
                         <h3>Contactar soporte</h3>
-                        <span class="pill">Respuesta rápida</span>
-                    </div>
-                    <div class="body">
-                        <p style="margin:0 0 10px;">
-                            Para ayudarte mejor, incluye estos datos: dispositivo, versión del sistema y qué estabas
-                            haciendo cuando pasó.
-                        </p>
+                        <span class="pill">Email</span>
                     </div>
 
                     <div class="list" style="padding-top:0;">
@@ -705,23 +656,13 @@
                                 <b>Email</b>
                                 <small id="supportEmail">francisperalta05@gmail.com</small>
                             </div>
-                            <button class="btn" style="padding:8px 10px;"
+                            <button class="btn" style="padding:8px 10px;" type="button"
                                 onclick="copyText('francisperalta05@gmail.com')">Copiar</button>
-                        </div>
-
-                        <div class="item">
-                            <div>
-                                <b>WhatsApp</b>
-                                <small id="supportWhats">+1 (809) 000-0000</small>
-                            </div>
-                            <a class="btn" style="padding:8px 10px;" href="https://wa.me/18090000000" target="_blank"
-                                rel="noopener">Abrir</a>
                         </div>
                     </div>
 
                     <div class="gradient-line" style="margin: 0 14px 14px;"></div>
 
-                    <!-- Quick Contact Form (mailto) -->
                     <div class="form">
                         <div class="row">
                             <div>
@@ -733,7 +674,7 @@
                                 <select id="topic">
                                     <option value="Bug">Reportar un bug</option>
                                     <option value="Sugerencia">Sugerencia</option>
-                                    <option value="Cuenta">Cuenta / pagos</option>
+                                    <option value="Privacidad">Privacidad</option>
                                     <option value="Otro">Otro</option>
                                 </select>
                             </div>
@@ -756,22 +697,32 @@
                         </div>
 
                         <div class="helper">
-                            Al enviar, se abrirá tu app de correo con el mensaje listo. Adjunta una captura si es
-                            posible.
+                            Si el botón no abre tu correo, copia el mensaje y envíalo manualmente a
+                            <b>francisperalta05@gmail.com</b>.
+                            (Algunos navegadores bloquean <code>mailto:</code> si no hay app de correo configurada.)
                         </div>
 
-                        <button class="btn primary" type="button" onclick="sendMail()">
+                        <!-- FIX: Use an <a> mailto link as primary action (most reliable) -->
+                        <a id="mailtoLink" class="btn primary" href="#" role="button" aria-label="Enviar correo">
                             <svg viewBox="0 0 24 24" fill="none">
-                                <path d="M4 4h16v16H4V4z" stroke="currentColor" stroke-width="2" opacity=".35" />
+                                <path d="M4 6h16v12H4V6z" stroke="currentColor" stroke-width="2" opacity=".45" />
                                 <path d="M4 7l8 6 8-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                     stroke-linejoin="round" />
                             </svg>
                             Enviar correo
+                        </a>
+
+                        <!-- Fallback: copy all content -->
+                        <button class="btn" type="button" onclick="copySupportTemplate()">
+                            <svg viewBox="0 0 24 24" fill="none">
+                                <path d="M8 8h12v12H8V8z" stroke="currentColor" stroke-width="2" />
+                                <path d="M4 4h12v12H4V4z" stroke="currentColor" stroke-width="2" opacity=".35" />
+                            </svg>
+                            Copiar mensaje
                         </button>
                     </div>
                 </section>
 
-                <!-- Status / Tips -->
                 <section class="card" style="margin-top:14px;">
                     <div class="head">
                         <h3>Consejos rápidos</h3>
@@ -780,33 +731,24 @@
                     <div class="list">
                         <div class="item">
                             <div>
-                                <b>App lenta o trabada</b>
-                                <small>Cierra la app por completo y vuelve a abrirla. Luego intenta de nuevo.</small>
+                                <b>El correo no abre</b>
+                                <small>En iOS/Android asegúrate de tener una app de correo configurada (Mail/Gmail). En
+                                    PC, configura tu cliente por defecto.</small>
                             </div>
-                            <span class="pill">Rendimiento</span>
+                            <span class="pill">mailto</span>
                         </div>
                         <div class="item">
                             <div>
-                                <b>Datos no aparecen</b>
-                                <small>Verifica que estás en la lista correcta. Si persiste, envía reporte con
-                                    detalles.</small>
+                                <b>Ayúdanos a ayudarte</b>
+                                <small>Incluye dispositivo, sistema y pasos para reproducir el problema.</small>
                             </div>
-                            <span class="pill">Datos</span>
-                        </div>
-                        <div class="item">
-                            <div>
-                                <b>Función nueva</b>
-                                <small>Cuéntanos cuál y por qué te ayudaría. Las mejores ideas se implementan
-                                    primero.</small>
-                            </div>
-                            <span class="pill">Mejoras</span>
+                            <span class="pill">Debug</span>
                         </div>
                     </div>
                 </section>
             </aside>
         </div>
 
-        <!-- Footer -->
         <div class="footer">
             <div>© <span id="y"></span> ListUp</div>
             <div class="links">
@@ -817,16 +759,55 @@
     </div>
 
     <script>
-        // Update year
         document.getElementById('y').textContent = new Date().getFullYear();
 
-        // Copy helper
+        const SUPPORT_EMAIL = "francisperalta05@gmail.com";
+
+        // Build a reliable mailto link (some browsers block JS-triggered mailto)
+        function buildMailtoHref() {
+            const name = document.getElementById('name').value.trim();
+            const topic = document.getElementById('topic').value.trim();
+            const device = document.getElementById('device').value.trim();
+            const os = document.getElementById('os').value.trim();
+            const message = document.getElementById('message').value.trim();
+
+            const subject = `[ListUp] ${topic}` + (name ? ` - ${name}` : '');
+
+            const bodyLines = [
+                message || '(Describe tu problema o sugerencia aquí)',
+                '',
+                '---',
+                'Datos para soporte:',
+                `Nombre: ${name || 'N/A'}`,
+                `Dispositivo: ${device || 'N/A'}`,
+                `Sistema: ${os || 'N/A'}`,
+                'Versión de la app: (completa con tu versión)',
+            ];
+
+            const href = `mailto:${SUPPORT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(bodyLines.join('\n'))}`;
+            return href;
+        }
+
+        // Keep mailto link always updated as user types/selects
+        function refreshMailto() {
+            const link = document.getElementById('mailtoLink');
+            link.href = buildMailtoHref();
+        }
+
+        // Wire changes
+        ['name', 'topic', 'device', 'os', 'message'].forEach(id => {
+            const el = document.getElementById(id);
+            el.addEventListener('input', refreshMailto);
+            el.addEventListener('change', refreshMailto);
+        });
+        refreshMailto();
+
+        // Copy helpers
         async function copyText(text) {
             try {
                 await navigator.clipboard.writeText(text);
                 toast('Copiado: ' + text);
             } catch (e) {
-                // fallback
                 const ta = document.createElement('textarea');
                 ta.value = text;
                 document.body.appendChild(ta);
@@ -837,7 +818,22 @@
             }
         }
 
-        // Simple toast
+        async function copySupportTemplate() {
+            const href = buildMailtoHref();
+            // Extract subject/body from mailto and turn into plain text
+            const url = new URL(href);
+            const subject = url.searchParams.get('subject') || '';
+            const body = url.searchParams.get('body') || '';
+            const text =
+                `Para: ${SUPPORT_EMAIL}
+Asunto: ${decodeURIComponent(subject)}
+
+${decodeURIComponent(body)}`;
+
+            await copyText(text);
+        }
+
+        // Toast
         let toastTimer;
         function toast(msg) {
             clearTimeout(toastTimer);
@@ -863,29 +859,6 @@
             el.textContent = msg;
             el.style.opacity = '1';
             toastTimer = setTimeout(() => { el.style.opacity = '0'; }, 1800);
-        }
-
-        // Mailto builder
-        function sendMail() {
-            const name = document.getElementById('name').value.trim();
-            const topic = document.getElementById('topic').value.trim();
-            const device = document.getElementById('device').value.trim();
-            const os = document.getElementById('os').value.trim();
-            const message = document.getElementById('message').value.trim();
-
-            const subject = `[ListUp] ${topic}` + (name ? ` - ${name}` : '');
-            const bodyLines = [
-                message || '(Describe tu problema o sugerencia aquí)',
-                '',
-                '---',
-                'Datos para soporte:',
-                `Dispositivo: ${device || 'N/A'}`,
-                `Sistema: ${os || 'N/A'}`,
-                'Versión de la app: (completa con tu versión)',
-            ];
-
-            const mailto = `mailto:francisperalta05@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(bodyLines.join('\n'))}`;
-            window.location.href = mailto;
         }
     </script>
 </body>
