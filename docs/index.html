@@ -4,9 +4,8 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>ListUp • Página oficial</title>
-    <meta name="description"
-        content="ListUp: lista de compras simple, rápida y minimalista. Descárgala en App Store y Google Play." />
+    <title>ListUp • Soporte</title>
+    <meta name="description" content="Soporte de ListUp: guía rápida, preguntas frecuentes y contacto." />
     <meta name="theme-color" content="#0B0F1A" />
     <style>
         :root {
@@ -45,7 +44,7 @@
         .wrap {
             max-width: 1100px;
             margin: 0 auto;
-            padding: 28px 18px 70px;
+            padding: 28px 18px 70px
         }
 
         .top {
@@ -53,14 +52,14 @@
             align-items: center;
             justify-content: space-between;
             gap: 14px;
-            margin-bottom: 18px;
+            margin-bottom: 18px
         }
 
         .brand {
             display: flex;
             align-items: center;
             gap: 12px;
-            min-width: 260px;
+            min-width: 260px
         }
 
         .logo {
@@ -86,26 +85,26 @@
             display: flex;
             flex-direction: column;
             gap: 4px;
-            line-height: 1.1;
+            line-height: 1.1
         }
 
         .title h1 {
             font-size: 22px;
             margin: 0;
-            letter-spacing: .2px;
+            letter-spacing: .2px
         }
 
         .title p {
             margin: 0;
             color: var(--muted);
-            font-size: 13px;
+            font-size: 13px
         }
 
         .actions {
             display: flex;
             gap: 10px;
             flex-wrap: wrap;
-            justify-content: flex-end;
+            justify-content: flex-end
         }
 
         .btn {
@@ -122,16 +121,15 @@
             cursor: pointer;
             transition: transform .08s ease, background .12s ease, border-color .12s ease;
             user-select: none;
-            white-space: nowrap;
         }
 
         .btn:hover {
             background: rgba(255, 255, 255, .06);
-            border-color: rgba(255, 255, 255, .14);
+            border-color: rgba(255, 255, 255, .14)
         }
 
         .btn:active {
-            transform: translateY(1px);
+            transform: translateY(1px)
         }
 
         .btn.primary {
@@ -141,13 +139,13 @@
         }
 
         .btn.primary:hover {
-            filter: brightness(1.03);
+            filter: brightness(1.03)
         }
 
         .btn svg {
             width: 16px;
             height: 16px;
-            opacity: .95;
+            opacity: .95
         }
 
         .hero {
@@ -163,9 +161,13 @@
         .hero-inner {
             padding: 18px;
             display: grid;
-            grid-template-columns: 1.25fr .75fr;
+            grid-template-columns: 1.35fr .65fr;
             gap: 14px;
             align-items: stretch;
+        }
+
+        .hero-left {
+            padding: 8px 6px
         }
 
         .badge {
@@ -182,8 +184,8 @@
 
         .hero h2 {
             margin: 12px 0 6px;
-            font-size: 30px;
-            letter-spacing: .2px;
+            font-size: 28px;
+            letter-spacing: .2px
         }
 
         .hero p {
@@ -191,62 +193,33 @@
             color: var(--muted);
             line-height: 1.55;
             font-size: 14px;
-            max-width: 70ch;
+            max-width: 68ch
         }
 
-        .store-row {
-            margin-top: 14px;
+        .quick {
             display: flex;
             flex-wrap: wrap;
             gap: 10px;
-            align-items: center;
+            margin-top: 14px
         }
 
-        .store-btn {
+        .chip {
             display: inline-flex;
             align-items: center;
-            gap: 10px;
-            padding: 12px 14px;
+            gap: 8px;
+            padding: 10px 12px;
             border-radius: 16px;
-            border: 1px solid rgba(255, 255, 255, .10);
+            border: 1px solid rgba(255, 255, 255, .08);
             background: rgba(26, 29, 36, .55);
             color: var(--text);
             text-decoration: none;
-            transition: background .12s ease, border-color .12s ease, transform .08s ease;
-        }
-
-        .store-btn:hover {
-            background: rgba(26, 29, 36, .75);
-            border-color: rgba(255, 255, 255, .16);
-        }
-
-        .store-btn:active {
-            transform: translateY(1px);
-        }
-
-        .store-btn .mini {
-            width: 36px;
-            height: 36px;
-            border-radius: 14px;
-            border: 1px solid rgba(255, 255, 255, .10);
-            background: rgba(255, 255, 255, .03);
-            display: grid;
-            place-items: center;
-        }
-
-        .store-btn .txt {
-            display: flex;
-            flex-direction: column;
-            line-height: 1.1;
-        }
-
-        .store-btn .txt small {
-            color: var(--muted);
-            font-size: 11px;
-        }
-
-        .store-btn .txt strong {
             font-size: 13px;
+            transition: background .12s ease, border-color .12s ease;
+        }
+
+        .chip:hover {
+            background: rgba(26, 29, 36, .75);
+            border-color: rgba(255, 255, 255, .14)
         }
 
         .hero-right {
@@ -272,23 +245,13 @@
         }
 
         .stat strong {
-            font-size: 13px;
+            font-size: 13px
         }
 
         .stat span {
             color: var(--muted);
             font-size: 12px;
-            line-height: 1.4;
-        }
-
-        .pill {
-            white-space: nowrap;
-            font-size: 12px;
-            padding: 7px 10px;
-            border-radius: 999px;
-            border: 1px solid rgba(255, 255, 255, .10);
-            background: rgba(255, 255, 255, .03);
-            color: var(--muted);
+            line-height: 1.4
         }
 
         .gradient-line {
@@ -303,7 +266,7 @@
             display: grid;
             grid-template-columns: 1.15fr .85fr;
             gap: 14px;
-            align-items: start;
+            align-items: start
         }
 
         .card {
@@ -319,27 +282,27 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            gap: 12px;
+            gap: 12px
         }
 
         .card .head h3 {
             margin: 0;
             font-size: 15px;
-            font-weight: 800;
+            font-weight: 800
         }
 
         .card .body {
             padding: 0 14px 14px;
             color: var(--muted);
             font-size: 14px;
-            line-height: 1.55;
+            line-height: 1.55
         }
 
         .list {
             display: flex;
             flex-direction: column;
             gap: 10px;
-            padding: 0 14px 14px;
+            padding: 0 14px 14px
         }
 
         .item {
@@ -357,30 +320,117 @@
             display: block;
             color: var(--text);
             font-size: 13px;
-            margin-bottom: 4px;
+            margin-bottom: 4px
         }
 
         .item small {
             display: block;
             color: var(--muted);
             font-size: 12px;
-            line-height: 1.4;
+            line-height: 1.4
         }
 
-        .links {
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-        }
-
-        .links a {
+        .pill {
+            white-space: nowrap;
+            font-size: 12px;
+            padding: 7px 10px;
+            border-radius: 999px;
+            border: 1px solid rgba(255, 255, 255, .10);
+            background: rgba(255, 255, 255, .03);
             color: var(--muted);
-            text-decoration: none;
-            border-bottom: 1px dashed rgba(255, 255, 255, .18);
         }
 
-        .links a:hover {
+        details {
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, .06);
+            background: rgba(255, 255, 255, .02);
+            padding: 12px;
+        }
+
+        details+details {
+            margin-top: 10px
+        }
+
+        summary {
+            cursor: pointer;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            font-weight: 800;
+            font-size: 13px;
             color: var(--text);
+        }
+
+        summary::-webkit-details-marker {
+            display: none
+        }
+
+        .chev {
+            opacity: .75;
+            transition: transform .12s ease
+        }
+
+        details[open] .chev {
+            transform: rotate(180deg)
+        }
+
+        details p {
+            margin: 10px 0 0;
+            color: var(--muted);
+            font-size: 13px;
+            line-height: 1.5
+        }
+
+        .form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            padding: 0 14px 14px
+        }
+
+        label {
+            font-size: 12px;
+            color: var(--muted);
+            margin-top: 2px
+        }
+
+        input,
+        textarea,
+        select {
+            width: 100%;
+            background: rgba(15, 17, 21, .60);
+            color: var(--text);
+            border: 1px solid rgba(255, 255, 255, .08);
+            border-radius: 14px;
+            padding: 12px;
+            font-size: 14px;
+            outline: none;
+        }
+
+        textarea {
+            min-height: 110px;
+            resize: vertical
+        }
+
+        input:focus,
+        textarea:focus,
+        select:focus {
+            border-color: rgba(0, 206, 201, .35);
+            box-shadow: 0 0 0 4px rgba(0, 206, 201, .08);
+        }
+
+        .row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px
+        }
+
+        .helper {
+            font-size: 12px;
+            color: var(--muted);
+            line-height: 1.45
         }
 
         .footer {
@@ -394,27 +444,37 @@
             flex-wrap: wrap;
         }
 
-        code {
-            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-            font-size: 12px;
-            color: rgba(255, 255, 255, .92);
-            background: rgba(255, 255, 255, .06);
-            padding: 2px 6px;
-            border-radius: 8px;
-            border: 1px solid rgba(255, 255, 255, .06);
+        .links {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap
+        }
+
+        .links a {
+            color: var(--muted);
+            text-decoration: none;
+            border-bottom: 1px dashed rgba(255, 255, 255, .18)
+        }
+
+        .links a:hover {
+            color: var(--text)
         }
 
         @media (max-width: 920px) {
             .hero-inner {
-                grid-template-columns: 1fr;
+                grid-template-columns: 1fr
             }
 
             .content {
-                grid-template-columns: 1fr;
+                grid-template-columns: 1fr
+            }
+
+            .row {
+                grid-template-columns: 1fr
             }
 
             .actions {
-                justify-content: flex-start;
+                justify-content: flex-start
             }
         }
     </style>
@@ -422,28 +482,16 @@
 
 <body>
     <div class="wrap">
-        <!-- Top -->
         <div class="top">
             <div class="brand">
                 <div class="logo" aria-hidden="true"></div>
                 <div class="title">
-                    <h1>ListUp</h1>
-                    <p>Lista de compras simple, rápida y minimalista</p>
+                    <h1>ListUp • Soporte</h1>
+                    <p>Ayuda rápida, preguntas frecuentes y contacto</p>
                 </div>
             </div>
 
             <div class="actions">
-                <a class="btn" href="support.html" title="Ir a soporte">
-                    <svg viewBox="0 0 24 24" fill="none">
-                        <path d="M22 12c0 5.523-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2s10 4.477 10 10z"
-                            stroke="currentColor" stroke-width="2" />
-                        <path d="M8 12h8" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-                        <path d="M8 8h6" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-                        <path d="M8 16h5" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-                    </svg>
-                    Soporte
-                </a>
-
                 <a class="btn" href="privacy.html" title="Ver política de privacidad">
                     <svg viewBox="0 0 24 24" fill="none">
                         <path d="M12 2l7 4v6c0 5-3 9-7 10-4-1-7-5-7-10V6l7-4z" stroke="currentColor" stroke-width="2" />
@@ -452,229 +500,260 @@
                     </svg>
                     Privacidad
                 </a>
-
-                <a class="btn primary" href="#descargar" title="Descargar ListUp">
+                <a class="btn primary" href="#contacto" title="Contactar soporte">
                     <svg viewBox="0 0 24 24" fill="none">
-                        <path d="M12 3v10" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-                        <path d="M8 11l4 4 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                            stroke-linejoin="round" />
-                        <path d="M5 21h14" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                        <path d="M22 12c0 5.523-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2s10 4.477 10 10z"
+                            stroke="currentColor" stroke-width="2" />
+                        <path d="M8 12h8" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                        <path d="M8 8h6" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                        <path d="M8 16h5" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
                     </svg>
-                    Descargar
+                    Contactar
                 </a>
             </div>
         </div>
 
-        <!-- Hero -->
-        <section class="hero" id="descargar">
+        <section class="hero">
             <div class="hero-inner">
                 <div class="hero-left">
                     <span class="badge">
                         <span
                             style="width:8px;height:8px;border-radius:999px;background:linear-gradient(135deg,var(--g1),var(--g2));display:inline-block"></span>
-                        Oficial • Dark UI • Privacidad primero
+                        Centro de ayuda oficial de ListUp
                     </span>
 
                     <h2>Compra con orden.<br />Sin olvidar nada.</h2>
                     <p>
-                        ListUp te ayuda a crear listas, agregar productos, marcar lo comprado y limpiar lo completado.
-                        Funciona sin cuenta y guarda tus datos localmente para mantener todo rápido y privado.
+                        ListUp te permite crear listas, agregar productos, marcar lo comprado y limpiar lo completado.
+                        Todo se guarda en tu dispositivo para mantener la app rápida y privada.
                     </p>
 
-                    <!-- Store buttons (replace # with your real store links) -->
-                    <div class="store-row">
-                        <a class="store-btn" id="appStoreBtn" href="#" target="_blank" rel="noopener">
-                            <div class="mini" aria-hidden="true">
-                                <!-- Apple icon -->
-                                <svg viewBox="0 0 24 24" width="18" height="18" fill="none">
-                                    <path
-                                        d="M16.6 13.2c0 2.4 2.1 3.2 2.1 3.2s-1.6 4.7-3.8 4.7c-1 0-1.8-.7-2.9-.7-1.1 0-2 .7-3 .7-2.1 0-4-4.5-4-7.8 0-2.9 1.7-4.4 3.4-4.4 1 0 1.9.7 2.8.7.9 0 2.1-.8 3.4-.8.5 0 2.2.1 3.3 1.7-.1.1-2 .9-2 .9-.9.6-1.3 1.3-1.3 1.8z"
-                                        stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" />
-                                    <path
-                                        d="M14.7 3.3c-.8 1-1.3 2.3-1.2 3.6 1.2.1 2.4-.7 3.2-1.7.8-1 1.3-2.3 1.2-3.6-1.2-.1-2.4.7-3.2 1.7z"
-                                        stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" />
-                                </svg>
-                            </div>
-                            <div class="txt">
-                                <small>Descargar en</small>
-                                <strong>App Store</strong>
-                            </div>
-                        </a>
-
-                        <a class="store-btn" id="googlePlayBtn" href="#" target="_blank" rel="noopener">
-                            <div class="mini" aria-hidden="true">
-                                <!-- Play icon -->
-                                <svg viewBox="0 0 24 24" width="18" height="18" fill="none">
-                                    <path d="M7 4.5v15l13-7.5L7 4.5z" stroke="currentColor" stroke-width="2"
-                                        stroke-linejoin="round" />
-                                </svg>
-                            </div>
-                            <div class="txt">
-                                <small>Descargar en</small>
-                                <strong>Google Play</strong>
-                            </div>
-                        </a>
-
-                        <a class="btn" href="support.html" title="Soporte técnico">Soporte</a>
-                        <a class="btn" href="privacy.html" title="Política de privacidad">Privacidad</a>
-                    </div>
-
-                    <div style="margin-top:10px; color: var(--muted); font-size: 12px;">
-                        ¿Aún no están listos los links? Puedes publicar esta página y luego reemplazar los enlaces por
-                        los oficiales.
+                    <div class="quick">
+                        <a class="chip" href="#guia">Guía rápida</a>
+                        <a class="chip" href="#faq">Preguntas frecuentes</a>
+                        <a class="chip" href="#contacto">Soporte</a>
                     </div>
                 </div>
 
                 <aside class="hero-right">
                     <div class="stat">
                         <div>
-                            <strong>Sin cuenta</strong>
-                            <span>ListUp funciona sin registro. Simple y directo.</span>
+                            <strong>Privacidad primero</strong>
+                            <span>Sin cuentas. Tus listas se guardan localmente.</span>
                         </div>
-                        <span class="pill">No login</span>
+                        <span class="pill">Local</span>
                     </div>
 
                     <div class="stat">
                         <div>
-                            <strong>Datos locales</strong>
-                            <span>Tus listas se guardan en el dispositivo (SQLite).</span>
+                            <strong>Experiencia minimalista</strong>
+                            <span>Diseñada para ser rápida y sin distracciones.</span>
                         </div>
-                        <span class="pill">Local</span>
+                        <span class="pill">Dark</span>
                     </div>
 
                     <div class="gradient-line"></div>
 
                     <div class="stat">
                         <div>
-                            <strong>Contacto</strong>
-                            <span>Soporte por email en <code>francisperalta05@gmail.com</code></span>
+                            <strong>¿Necesitas ayuda?</strong>
+                            <span>Envíanos detalles y lo revisamos.</span>
                         </div>
-                        <span class="pill">Email</span>
+                        <span class="pill">Soporte</span>
                     </div>
                 </aside>
             </div>
         </section>
 
-        <!-- Content -->
         <div class="content">
             <main>
-                <section class="card">
+                <section class="card" id="guia">
                     <div class="head">
-                        <h3>Funciones principales</h3>
-                        <span class="pill">Features</span>
+                        <h3>Guía rápida</h3>
+                        <span class="pill">2 minutos</span>
                     </div>
                     <div class="list">
                         <div class="item">
                             <div>
-                                <b>Listas múltiples</b>
-                                <small>Crea listas por supermercado, por semana o por ocasión.</small>
+                                <b>1) Crea una lista</b>
+                                <small>En la pantalla principal toca “+” y ponle un nombre (Casa, Súper,
+                                    Jumbo…).</small>
                             </div>
                             <span class="pill">Listas</span>
                         </div>
                         <div class="item">
                             <div>
-                                <b>Productos y cantidades</b>
-                                <small>Agrega productos y define cantidades cuando lo necesites.</small>
+                                <b>2) Agrega productos</b>
+                                <small>Entra a una lista y agrega productos con cantidad opcional.</small>
                             </div>
                             <span class="pill">Items</span>
                         </div>
                         <div class="item">
                             <div>
-                                <b>Marcar comprados</b>
-                                <small>Marca lo que ya compraste y mantén tu lista limpia.</small>
+                                <b>3) Marca lo comprado</b>
+                                <small>Usa el checkbox para marcar como comprado. Se ordena automáticamente.</small>
                             </div>
-                            <span class="pill">Check</span>
+                            <span class="pill">Hecho</span>
                         </div>
                         <div class="item">
                             <div>
-                                <b>Minimalismo moderno</b>
-                                <small>Interfaz oscura con estilo moderno y gradientes.</small>
+                                <b>4) Limpia completados</b>
+                                <small>Usa “Limpiar comprados” para mantener la lista ligera.</small>
                             </div>
-                            <span class="pill">Dark</span>
+                            <span class="pill">Orden</span>
                         </div>
                     </div>
                 </section>
 
-                <section class="card" style="margin-top:14px;">
+                <section class="card" id="faq" style="margin-top:14px;">
                     <div class="head">
-                        <h3>Preguntas rápidas</h3>
+                        <h3>Preguntas frecuentes</h3>
                         <span class="pill">FAQ</span>
                     </div>
                     <div class="body">
-                        <p style="margin:0 0 10px;">
-                            <b>¿ListUp requiere internet?</b><br />
-                            No. Funciona sin conexión para crear y administrar tus listas.
-                        </p>
-                        <p style="margin:0 0 10px;">
-                            <b>¿Mis datos se suben a la nube?</b><br />
-                            No. Tus datos se almacenan localmente en tu dispositivo.
-                        </p>
-                        <p style="margin:0;">
-                            <b>¿Dónde puedo pedir ayuda?</b><br />
-                            En la página de <a href="support.html" style="color: var(--text);">soporte</a>.
-                        </p>
+                        <details>
+                            <summary>¿ListUp guarda mis datos en internet? <span class="chev">▾</span></summary>
+                            <p>No. Tus listas se guardan en tu dispositivo. La app no requiere cuenta y no envía tus
+                                listas a servidores.</p>
+                        </details>
+
+                        <details>
+                            <summary>¿Cómo hago backup de mis listas? <span class="chev">▾</span></summary>
+                            <p>En esta versión, el almacenamiento es local. Si necesitas backup, escríbenos: es una
+                                función planeada.</p>
+                        </details>
+
+                        <details>
+                            <summary>La app no actualiza o no veo mis cambios <span class="chev">▾</span></summary>
+                            <p>Reinicia la app y revisa si tienes la versión más reciente. Si persiste, envíanos el
+                                modelo del teléfono y la versión del sistema.</p>
+                        </details>
+
+                        <details>
+                            <summary>¿Puedo tener varias listas? <span class="chev">▾</span></summary>
+                            <p>Sí. Puedes crear múltiples listas (Casa, Súper, Cumple...).</p>
+                        </details>
+
+                        <details>
+                            <summary>¿Qué permisos usa ListUp? <span class="chev">▾</span></summary>
+                            <p>ListUp no requiere permisos sensibles para funcionar. Si en el futuro agregamos
+                                notificaciones o backups, se informará claramente.</p>
+                        </details>
                     </div>
                 </section>
             </main>
 
             <aside>
-                <section class="card">
+                <section class="card" id="contacto">
                     <div class="head">
-                        <h3>Enlaces</h3>
-                        <span class="pill">Links</span>
+                        <h3>Contactar soporte</h3>
+                        <span class="pill">Email</span>
                     </div>
-                    <div class="list">
+
+                    <div class="list" style="padding-top:0;">
                         <div class="item">
                             <div>
-                                <b>Soporte</b>
-                                <small>Ayuda, contacto y preguntas frecuentes.</small>
+                                <b>Email</b>
+                                <small id="supportEmail">francisperalta05@gmail.com</small>
                             </div>
-                            <a class="btn primary" href="support.html" style="padding:8px 10px;">Abrir</a>
+                            <button class="btn" style="padding:8px 10px;" type="button"
+                                onclick="copyText('francisperalta05@gmail.com')">Copiar</button>
+                        </div>
+                    </div>
+
+                    <div class="gradient-line" style="margin: 0 14px 14px;"></div>
+
+                    <div class="form">
+                        <div class="row">
+                            <div>
+                                <label for="name">Nombre (opcional)</label>
+                                <input id="name" placeholder="Tu nombre" />
+                            </div>
+                            <div>
+                                <label for="topic">Motivo</label>
+                                <select id="topic">
+                                    <option value="Bug">Reportar un bug</option>
+                                    <option value="Sugerencia">Sugerencia</option>
+                                    <option value="Privacidad">Privacidad</option>
+                                    <option value="Otro">Otro</option>
+                                </select>
+                            </div>
                         </div>
 
-                        <div class="item">
+                        <div class="row">
                             <div>
-                                <b>Política de privacidad</b>
-                                <small>Cómo se usan y protegen tus datos.</small>
+                                <label for="device">Dispositivo</label>
+                                <input id="device" placeholder="Ej: Samsung A54 / iPhone 13" />
                             </div>
-                            <a class="btn" href="privacy.html" style="padding:8px 10px;">Ver</a>
+                            <div>
+                                <label for="os">Sistema</label>
+                                <input id="os" placeholder="Ej: Android 14 / iOS 17" />
+                            </div>
                         </div>
 
-                        <div class="item">
-                            <div>
-                                <b>Contacto</b>
-                                <small>francisperalta05@gmail.com</small>
-                            </div>
-                            <span class="pill">Email</span>
+                        <div>
+                            <label for="message">Mensaje</label>
+                            <textarea id="message" placeholder="Describe el problema o tu idea..."></textarea>
                         </div>
+
+                        <div class="helper">
+                            Si el botón no abre tu correo, copia el mensaje y envíalo manualmente a
+                            <b>francisperalta05@gmail.com</b>.
+                            (Algunos navegadores bloquean <code>mailto:</code> si no hay app de correo configurada.)
+                        </div>
+
+                        <!-- FIX: Use an <a> mailto link as primary action (most reliable) -->
+                        <a id="mailtoLink" class="btn primary" href="#" role="button" aria-label="Enviar correo">
+                            <svg viewBox="0 0 24 24" fill="none">
+                                <path d="M4 6h16v12H4V6z" stroke="currentColor" stroke-width="2" opacity=".45" />
+                                <path d="M4 7l8 6 8-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                            Enviar correo
+                        </a>
+
+                        <!-- Fallback: copy all content -->
+                        <button class="btn" type="button" onclick="copySupportTemplate()">
+                            <svg viewBox="0 0 24 24" fill="none">
+                                <path d="M8 8h12v12H8V8z" stroke="currentColor" stroke-width="2" />
+                                <path d="M4 4h12v12H4V4z" stroke="currentColor" stroke-width="2" opacity=".35" />
+                            </svg>
+                            Copiar mensaje
+                        </button>
                     </div>
                 </section>
 
                 <section class="card" style="margin-top:14px;">
                     <div class="head">
-                        <h3>Información legal</h3>
-                        <span class="pill">Legal</span>
+                        <h3>Consejos rápidos</h3>
+                        <span class="pill">Tips</span>
                     </div>
-                    <div class="body">
-                        <p style="margin:0 0 10px;">
-                            Al usar ListUp aceptas la <a href="privacy.html" style="color:var(--text);">Política de
-                                privacidad</a>.
-                        </p>
-                        <p style="margin:0;">
-                            Para soporte, consulta <a href="support.html" style="color:var(--text);">support.html</a>.
-                        </p>
+                    <div class="list">
+                        <div class="item">
+                            <div>
+                                <b>El correo no abre</b>
+                                <small>En iOS/Android asegúrate de tener una app de correo configurada (Mail/Gmail). En
+                                    PC, configura tu cliente por defecto.</small>
+                            </div>
+                            <span class="pill">mailto</span>
+                        </div>
+                        <div class="item">
+                            <div>
+                                <b>Ayúdanos a ayudarte</b>
+                                <small>Incluye dispositivo, sistema y pasos para reproducir el problema.</small>
+                            </div>
+                            <span class="pill">Debug</span>
+                        </div>
                     </div>
                 </section>
             </aside>
         </div>
 
-        <!-- Footer -->
         <div class="footer">
             <div>© <span id="y"></span> ListUp</div>
             <div class="links">
-                <a href="support.html">Soporte</a>
-                <a href="privacy.html">Privacidad</a>
-                <a href="#descargar">Descargar</a>
+                <a href="privacy.html">Política de privacidad</a>
+                <a href="#contacto">Contacto</a>
             </div>
         </div>
     </div>
@@ -682,27 +761,104 @@
     <script>
         document.getElementById('y').textContent = new Date().getFullYear();
 
-        // TODO: Reemplaza estos enlaces por los reales cuando publiques la app:
-        const APP_STORE_URL = "#";   // Ej: https://apps.apple.com/app/idXXXXXXXXXX
-        const GOOGLE_PLAY_URL = "#"; // Ej: https://play.google.com/store/apps/details?id=com.tu.bundle
+        const SUPPORT_EMAIL = "francisperalta05@gmail.com";
 
-        const appStoreBtn = document.getElementById("appStoreBtn");
-        const googlePlayBtn = document.getElementById("googlePlayBtn");
+        // Build a reliable mailto link (some browsers block JS-triggered mailto)
+        function buildMailtoHref() {
+            const name = document.getElementById('name').value.trim();
+            const topic = document.getElementById('topic').value.trim();
+            const device = document.getElementById('device').value.trim();
+            const os = document.getElementById('os').value.trim();
+            const message = document.getElementById('message').value.trim();
 
-        appStoreBtn.href = APP_STORE_URL;
-        googlePlayBtn.href = GOOGLE_PLAY_URL;
+            const subject = `[ListUp] ${topic}` + (name ? ` - ${name}` : '');
 
-        // Opcional: si aún no tienes links, deshabilita el target y muestra aviso al click
-        function guardPlaceholderLinks(a) {
-            if (a.href.endsWith("#")) {
-                a.addEventListener("click", (e) => {
-                    e.preventDefault();
-                    alert("Aún no has configurado el enlace de la tienda. Reemplaza APP_STORE_URL / GOOGLE_PLAY_URL en el script.");
-                });
+            const bodyLines = [
+                message || '(Describe tu problema o sugerencia aquí)',
+                '',
+                '---',
+                'Datos para soporte:',
+                `Nombre: ${name || 'N/A'}`,
+                `Dispositivo: ${device || 'N/A'}`,
+                `Sistema: ${os || 'N/A'}`,
+            ];
+
+            const href = `mailto:${SUPPORT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(bodyLines.join('\n'))}`;
+            return href;
+        }
+
+        // Keep mailto link always updated as user types/selects
+        function refreshMailto() {
+            const link = document.getElementById('mailtoLink');
+            link.href = buildMailtoHref();
+        }
+
+        // Wire changes
+        ['name', 'topic', 'device', 'os', 'message'].forEach(id => {
+            const el = document.getElementById(id);
+            el.addEventListener('input', refreshMailto);
+            el.addEventListener('change', refreshMailto);
+        });
+        refreshMailto();
+
+        // Copy helpers
+        async function copyText(text) {
+            try {
+                await navigator.clipboard.writeText(text);
+                toast('Copiado: ' + text);
+            } catch (e) {
+                const ta = document.createElement('textarea');
+                ta.value = text;
+                document.body.appendChild(ta);
+                ta.select();
+                document.execCommand('copy');
+                document.body.removeChild(ta);
+                toast('Copiado: ' + text);
             }
         }
-        guardPlaceholderLinks(appStoreBtn);
-        guardPlaceholderLinks(googlePlayBtn);
+
+        async function copySupportTemplate() {
+            const href = buildMailtoHref();
+            // Extract subject/body from mailto and turn into plain text
+            const url = new URL(href);
+            const subject = url.searchParams.get('subject') || '';
+            const body = url.searchParams.get('body') || '';
+            const text =
+                `Para: ${SUPPORT_EMAIL}
+Asunto: ${decodeURIComponent(subject)}
+
+${decodeURIComponent(body)}`;
+
+            await copyText(text);
+        }
+
+        // Toast
+        let toastTimer;
+        function toast(msg) {
+            clearTimeout(toastTimer);
+            let el = document.getElementById('toast');
+            if (!el) {
+                el = document.createElement('div');
+                el.id = 'toast';
+                el.style.position = 'fixed';
+                el.style.left = '50%';
+                el.style.bottom = '18px';
+                el.style.transform = 'translateX(-50%)';
+                el.style.padding = '10px 12px';
+                el.style.borderRadius = '14px';
+                el.style.border = '1px solid rgba(255,255,255,.10)';
+                el.style.background = 'rgba(26,29,36,.92)';
+                el.style.color = '#fff';
+                el.style.fontSize = '13px';
+                el.style.boxShadow = '0 18px 60px rgba(0,0,0,.55)';
+                el.style.backdropFilter = 'blur(12px)';
+                el.style.zIndex = '9999';
+                document.body.appendChild(el);
+            }
+            el.textContent = msg;
+            el.style.opacity = '1';
+            toastTimer = setTimeout(() => { el.style.opacity = '0'; }, 1800);
+        }
     </script>
 </body>
 

@@ -1,0 +1,709 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ListUp • Página oficial</title>
+    <meta name="description"
+        content="ListUp: lista de compras simple, rápida y minimalista. Descárgala en App Store y Google Play." />
+    <meta name="theme-color" content="#0B0F1A" />
+    <style>
+        :root {
+            --bg0: #0B0F1A;
+            --bg1: #0F1115;
+            --bg2: #1C1F26;
+            --card: #1A1D24;
+            --text: #FFFFFF;
+            --muted: #B2BEC3;
+            --border: rgba(255, 255, 255, .08);
+            --g1: #6C5CE7;
+            --g2: #00CEC9;
+            --shadow: 0 20px 60px rgba(0, 0, 0, .45);
+            --radius: 18px;
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        html,
+        body {
+            height: 100%
+        }
+
+        body {
+            margin: 0;
+            color: var(--text);
+            font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+            background:
+                radial-gradient(900px 520px at 18% -10%, rgba(108, 92, 231, .28), transparent 55%),
+                radial-gradient(900px 520px at 92% 6%, rgba(0, 206, 201, .18), transparent 55%),
+                linear-gradient(180deg, var(--bg1), var(--bg2));
+        }
+
+        .wrap {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 28px 18px 70px;
+        }
+
+        .top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 14px;
+            margin-bottom: 18px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            min-width: 260px;
+        }
+
+        .logo {
+            width: 44px;
+            height: 44px;
+            border-radius: 16px;
+            background: linear-gradient(135deg, var(--g1), var(--g2));
+            box-shadow: 0 14px 40px rgba(108, 92, 231, .22);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .logo:after {
+            content: "";
+            position: absolute;
+            inset: -40%;
+            background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, .35), transparent 45%);
+            transform: rotate(20deg);
+            opacity: .8;
+        }
+
+        .title {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            line-height: 1.1;
+        }
+
+        .title h1 {
+            font-size: 22px;
+            margin: 0;
+            letter-spacing: .2px;
+        }
+
+        .title p {
+            margin: 0;
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        .actions {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 12px;
+            border-radius: 14px;
+            border: 1px solid var(--border);
+            background: rgba(255, 255, 255, .03);
+            color: var(--text);
+            text-decoration: none;
+            font-size: 13px;
+            cursor: pointer;
+            transition: transform .08s ease, background .12s ease, border-color .12s ease;
+            user-select: none;
+            white-space: nowrap;
+        }
+
+        .btn:hover {
+            background: rgba(255, 255, 255, .06);
+            border-color: rgba(255, 255, 255, .14);
+        }
+
+        .btn:active {
+            transform: translateY(1px);
+        }
+
+        .btn.primary {
+            border: none;
+            background: linear-gradient(135deg, var(--g1), var(--g2));
+            box-shadow: 0 16px 45px rgba(0, 206, 201, .12);
+        }
+
+        .btn.primary:hover {
+            filter: brightness(1.03);
+        }
+
+        .btn svg {
+            width: 16px;
+            height: 16px;
+            opacity: .95;
+        }
+
+        .hero {
+            margin-top: 10px;
+            border-radius: 24px;
+            border: 1px solid rgba(255, 255, 255, .08);
+            background: linear-gradient(180deg, rgba(255, 255, 255, .04), rgba(255, 255, 255, .02));
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .hero-inner {
+            padding: 18px;
+            display: grid;
+            grid-template-columns: 1.25fr .75fr;
+            gap: 14px;
+            align-items: stretch;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 12px;
+            color: var(--muted);
+            padding: 8px 12px;
+            border-radius: 999px;
+            border: 1px solid rgba(255, 255, 255, .10);
+            background: rgba(255, 255, 255, .03);
+        }
+
+        .hero h2 {
+            margin: 12px 0 6px;
+            font-size: 30px;
+            letter-spacing: .2px;
+        }
+
+        .hero p {
+            margin: 0;
+            color: var(--muted);
+            line-height: 1.55;
+            font-size: 14px;
+            max-width: 70ch;
+        }
+
+        .store-row {
+            margin-top: 14px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .store-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 14px;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, .10);
+            background: rgba(26, 29, 36, .55);
+            color: var(--text);
+            text-decoration: none;
+            transition: background .12s ease, border-color .12s ease, transform .08s ease;
+        }
+
+        .store-btn:hover {
+            background: rgba(26, 29, 36, .75);
+            border-color: rgba(255, 255, 255, .16);
+        }
+
+        .store-btn:active {
+            transform: translateY(1px);
+        }
+
+        .store-btn .mini {
+            width: 36px;
+            height: 36px;
+            border-radius: 14px;
+            border: 1px solid rgba(255, 255, 255, .10);
+            background: rgba(255, 255, 255, .03);
+            display: grid;
+            place-items: center;
+        }
+
+        .store-btn .txt {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.1;
+        }
+
+        .store-btn .txt small {
+            color: var(--muted);
+            font-size: 11px;
+        }
+
+        .store-btn .txt strong {
+            font-size: 13px;
+        }
+
+        .hero-right {
+            border-radius: 18px;
+            border: 1px solid rgba(255, 255, 255, .08);
+            background: rgba(26, 29, 36, .55);
+            padding: 14px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 10px;
+        }
+
+        .stat {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 10px;
+            padding: 10px;
+            border-radius: 14px;
+            background: rgba(255, 255, 255, .02);
+            border: 1px solid rgba(255, 255, 255, .06);
+        }
+
+        .stat strong {
+            font-size: 13px;
+        }
+
+        .stat span {
+            color: var(--muted);
+            font-size: 12px;
+            line-height: 1.4;
+        }
+
+        .pill {
+            white-space: nowrap;
+            font-size: 12px;
+            padding: 7px 10px;
+            border-radius: 999px;
+            border: 1px solid rgba(255, 255, 255, .10);
+            background: rgba(255, 255, 255, .03);
+            color: var(--muted);
+        }
+
+        .gradient-line {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(108, 92, 231, .65), rgba(0, 206, 201, .65), transparent);
+            opacity: .75;
+            margin: 6px 0;
+        }
+
+        .content {
+            margin-top: 16px;
+            display: grid;
+            grid-template-columns: 1.15fr .85fr;
+            gap: 14px;
+            align-items: start;
+        }
+
+        .card {
+            border-radius: var(--radius);
+            border: 1px solid rgba(255, 255, 255, .08);
+            background: rgba(26, 29, 36, .70);
+            box-shadow: 0 16px 50px rgba(0, 0, 0, .25);
+            overflow: hidden;
+        }
+
+        .card .head {
+            padding: 14px 14px 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+        }
+
+        .card .head h3 {
+            margin: 0;
+            font-size: 15px;
+            font-weight: 800;
+        }
+
+        .card .body {
+            padding: 0 14px 14px;
+            color: var(--muted);
+            font-size: 14px;
+            line-height: 1.55;
+        }
+
+        .list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            padding: 0 14px 14px;
+        }
+
+        .item {
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, .06);
+            background: rgba(255, 255, 255, .02);
+            padding: 12px;
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 12px;
+        }
+
+        .item b {
+            display: block;
+            color: var(--text);
+            font-size: 13px;
+            margin-bottom: 4px;
+        }
+
+        .item small {
+            display: block;
+            color: var(--muted);
+            font-size: 12px;
+            line-height: 1.4;
+        }
+
+        .links {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .links a {
+            color: var(--muted);
+            text-decoration: none;
+            border-bottom: 1px dashed rgba(255, 255, 255, .18);
+        }
+
+        .links a:hover {
+            color: var(--text);
+        }
+
+        .footer {
+            margin-top: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            color: var(--muted);
+            font-size: 12px;
+            flex-wrap: wrap;
+        }
+
+        code {
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+            font-size: 12px;
+            color: rgba(255, 255, 255, .92);
+            background: rgba(255, 255, 255, .06);
+            padding: 2px 6px;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, .06);
+        }
+
+        @media (max-width: 920px) {
+            .hero-inner {
+                grid-template-columns: 1fr;
+            }
+
+            .content {
+                grid-template-columns: 1fr;
+            }
+
+            .actions {
+                justify-content: flex-start;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <!-- Top -->
+        <div class="top">
+            <div class="brand">
+                <div class="logo" aria-hidden="true"></div>
+                <div class="title">
+                    <h1>ListUp</h1>
+                    <p>Lista de compras simple, rápida y minimalista</p>
+                </div>
+            </div>
+
+            <div class="actions">
+                <a class="btn" href="support.html" title="Ir a soporte">
+                    <svg viewBox="0 0 24 24" fill="none">
+                        <path d="M22 12c0 5.523-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2s10 4.477 10 10z"
+                            stroke="currentColor" stroke-width="2" />
+                        <path d="M8 12h8" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                        <path d="M8 8h6" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                        <path d="M8 16h5" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                    </svg>
+                    Soporte
+                </a>
+
+                <a class="btn" href="privacy.html" title="Ver política de privacidad">
+                    <svg viewBox="0 0 24 24" fill="none">
+                        <path d="M12 2l7 4v6c0 5-3 9-7 10-4-1-7-5-7-10V6l7-4z" stroke="currentColor" stroke-width="2" />
+                        <path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                    Privacidad
+                </a>
+
+                <a class="btn primary" href="#descargar" title="Descargar ListUp">
+                    <svg viewBox="0 0 24 24" fill="none">
+                        <path d="M12 3v10" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                        <path d="M8 11l4 4 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                        <path d="M5 21h14" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                    </svg>
+                    Descargar
+                </a>
+            </div>
+        </div>
+
+        <!-- Hero -->
+        <section class="hero" id="descargar">
+            <div class="hero-inner">
+                <div class="hero-left">
+                    <span class="badge">
+                        <span
+                            style="width:8px;height:8px;border-radius:999px;background:linear-gradient(135deg,var(--g1),var(--g2));display:inline-block"></span>
+                        Oficial • Dark UI • Privacidad primero
+                    </span>
+
+                    <h2>Compra con orden.<br />Sin olvidar nada.</h2>
+                    <p>
+                        ListUp te ayuda a crear listas, agregar productos, marcar lo comprado y limpiar lo completado.
+                        Funciona sin cuenta y guarda tus datos localmente para mantener todo rápido y privado.
+                    </p>
+
+                    <!-- Store buttons (replace # with your real store links) -->
+                    <div class="store-row">
+                        <a class="store-btn" id="appStoreBtn" href="#" target="_blank" rel="noopener">
+                            <div class="mini" aria-hidden="true">
+                                <!-- Apple icon -->
+                                <svg viewBox="0 0 24 24" width="18" height="18" fill="none">
+                                    <path
+                                        d="M16.6 13.2c0 2.4 2.1 3.2 2.1 3.2s-1.6 4.7-3.8 4.7c-1 0-1.8-.7-2.9-.7-1.1 0-2 .7-3 .7-2.1 0-4-4.5-4-7.8 0-2.9 1.7-4.4 3.4-4.4 1 0 1.9.7 2.8.7.9 0 2.1-.8 3.4-.8.5 0 2.2.1 3.3 1.7-.1.1-2 .9-2 .9-.9.6-1.3 1.3-1.3 1.8z"
+                                        stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" />
+                                    <path
+                                        d="M14.7 3.3c-.8 1-1.3 2.3-1.2 3.6 1.2.1 2.4-.7 3.2-1.7.8-1 1.3-2.3 1.2-3.6-1.2-.1-2.4.7-3.2 1.7z"
+                                        stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                            <div class="txt">
+                                <small>Descargar en</small>
+                                <strong>App Store</strong>
+                            </div>
+                        </a>
+
+                        <a class="store-btn" id="googlePlayBtn" href="#" target="_blank" rel="noopener">
+                            <div class="mini" aria-hidden="true">
+                                <!-- Play icon -->
+                                <svg viewBox="0 0 24 24" width="18" height="18" fill="none">
+                                    <path d="M7 4.5v15l13-7.5L7 4.5z" stroke="currentColor" stroke-width="2"
+                                        stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                            <div class="txt">
+                                <small>Descargar en</small>
+                                <strong>Google Play</strong>
+                            </div>
+                        </a>
+
+                        <a class="btn" href="support.html" title="Soporte técnico">Soporte</a>
+                        <a class="btn" href="privacy.html" title="Política de privacidad">Privacidad</a>
+                    </div>
+
+                    <div style="margin-top:10px; color: var(--muted); font-size: 12px;">
+                        ¿Aún no están listos los links? Puedes publicar esta página y luego reemplazar los enlaces por
+                        los oficiales.
+                    </div>
+                </div>
+
+                <aside class="hero-right">
+                    <div class="stat">
+                        <div>
+                            <strong>Sin cuenta</strong>
+                            <span>ListUp funciona sin registro. Simple y directo.</span>
+                        </div>
+                        <span class="pill">No login</span>
+                    </div>
+
+                    <div class="stat">
+                        <div>
+                            <strong>Datos locales</strong>
+                            <span>Tus listas se guardan en el dispositivo (SQLite).</span>
+                        </div>
+                        <span class="pill">Local</span>
+                    </div>
+
+                    <div class="gradient-line"></div>
+
+                    <div class="stat">
+                        <div>
+                            <strong>Contacto</strong>
+                            <span>Soporte por email en <code>francisperalta05@gmail.com</code></span>
+                        </div>
+                        <span class="pill">Email</span>
+                    </div>
+                </aside>
+            </div>
+        </section>
+
+        <!-- Content -->
+        <div class="content">
+            <main>
+                <section class="card">
+                    <div class="head">
+                        <h3>Funciones principales</h3>
+                        <span class="pill">Features</span>
+                    </div>
+                    <div class="list">
+                        <div class="item">
+                            <div>
+                                <b>Listas múltiples</b>
+                                <small>Crea listas por supermercado, por semana o por ocasión.</small>
+                            </div>
+                            <span class="pill">Listas</span>
+                        </div>
+                        <div class="item">
+                            <div>
+                                <b>Productos y cantidades</b>
+                                <small>Agrega productos y define cantidades cuando lo necesites.</small>
+                            </div>
+                            <span class="pill">Items</span>
+                        </div>
+                        <div class="item">
+                            <div>
+                                <b>Marcar comprados</b>
+                                <small>Marca lo que ya compraste y mantén tu lista limpia.</small>
+                            </div>
+                            <span class="pill">Check</span>
+                        </div>
+                        <div class="item">
+                            <div>
+                                <b>Minimalismo moderno</b>
+                                <small>Interfaz oscura con estilo moderno y gradientes.</small>
+                            </div>
+                            <span class="pill">Dark</span>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="card" style="margin-top:14px;">
+                    <div class="head">
+                        <h3>Preguntas rápidas</h3>
+                        <span class="pill">FAQ</span>
+                    </div>
+                    <div class="body">
+                        <p style="margin:0 0 10px;">
+                            <b>¿ListUp requiere internet?</b><br />
+                            No. Funciona sin conexión para crear y administrar tus listas.
+                        </p>
+                        <p style="margin:0 0 10px;">
+                            <b>¿Mis datos se suben a la nube?</b><br />
+                            No. Tus datos se almacenan localmente en tu dispositivo.
+                        </p>
+                        <p style="margin:0;">
+                            <b>¿Dónde puedo pedir ayuda?</b><br />
+                            En la página de <a href="support.html" style="color: var(--text);">soporte</a>.
+                        </p>
+                    </div>
+                </section>
+            </main>
+
+            <aside>
+                <section class="card">
+                    <div class="head">
+                        <h3>Enlaces</h3>
+                        <span class="pill">Links</span>
+                    </div>
+                    <div class="list">
+                        <div class="item">
+                            <div>
+                                <b>Soporte</b>
+                                <small>Ayuda, contacto y preguntas frecuentes.</small>
+                            </div>
+                            <a class="btn primary" href="support.html" style="padding:8px 10px;">Abrir</a>
+                        </div>
+
+                        <div class="item">
+                            <div>
+                                <b>Política de privacidad</b>
+                                <small>Cómo se usan y protegen tus datos.</small>
+                            </div>
+                            <a class="btn" href="privacy.html" style="padding:8px 10px;">Ver</a>
+                        </div>
+
+                        <div class="item">
+                            <div>
+                                <b>Contacto</b>
+                                <small>francisperalta05@gmail.com</small>
+                            </div>
+                            <span class="pill">Email</span>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="card" style="margin-top:14px;">
+                    <div class="head">
+                        <h3>Información legal</h3>
+                        <span class="pill">Legal</span>
+                    </div>
+                    <div class="body">
+                        <p style="margin:0 0 10px;">
+                            Al usar ListUp aceptas la <a href="privacy.html" style="color:var(--text);">Política de
+                                privacidad</a>.
+                        </p>
+                        <p style="margin:0;">
+                            Para soporte, consulta <a href="support.html" style="color:var(--text);">support.html</a>.
+                        </p>
+                    </div>
+                </section>
+            </aside>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <div>© <span id="y"></span> ListUp</div>
+            <div class="links">
+                <a href="support.html">Soporte</a>
+                <a href="privacy.html">Privacidad</a>
+                <a href="#descargar">Descargar</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('y').textContent = new Date().getFullYear();
+
+        // TODO: Reemplaza estos enlaces por los reales cuando publiques la app:
+        const APP_STORE_URL = "#";   // Ej: https://apps.apple.com/app/idXXXXXXXXXX
+        const GOOGLE_PLAY_URL = "#"; // Ej: https://play.google.com/store/apps/details?id=com.tu.bundle
+
+        const appStoreBtn = document.getElementById("appStoreBtn");
+        const googlePlayBtn = document.getElementById("googlePlayBtn");
+
+        appStoreBtn.href = APP_STORE_URL;
+        googlePlayBtn.href = GOOGLE_PLAY_URL;
+
+        // Opcional: si aún no tienes links, deshabilita el target y muestra aviso al click
+        function guardPlaceholderLinks(a) {
+            if (a.href.endsWith("#")) {
+                a.addEventListener("click", (e) => {
+                    e.preventDefault();
+                    alert("Aún no has configurado el enlace de la tienda. Reemplaza APP_STORE_URL / GOOGLE_PLAY_URL en el script.");
+                });
+            }
+        }
+        guardPlaceholderLinks(appStoreBtn);
+        guardPlaceholderLinks(googlePlayBtn);
+    </script>
+</body>
+
+</html>
